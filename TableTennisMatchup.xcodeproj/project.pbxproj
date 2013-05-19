@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		504945731748517A00280208 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504945721748517A00280208 /* Cocoa.framework */; };
+		5049457D1748517A00280208 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5049457B1748517A00280208 /* InfoPlist.strings */; };
+		5049457F1748517A00280208 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5049457E1748517A00280208 /* main.m */; };
+		504945831748517A00280208 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 504945811748517A00280208 /* Credits.rtf */; };
+		504945861748517A00280208 /* TTMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945851748517A00280208 /* TTMAppDelegate.m */; };
+		504945891748517B00280208 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504945871748517B00280208 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5049456E1748517A00280208 /* TableTennisMatchup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTennisMatchup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		504945721748517A00280208 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		504945751748517A00280208 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		504945761748517A00280208 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		504945771748517A00280208 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5049457A1748517A00280208 /* TableTennisMatchup-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableTennisMatchup-Info.plist"; sourceTree = "<group>"; };
+		5049457C1748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5049457E1748517A00280208 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		504945801748517A00280208 /* TableTennisMatchup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableTennisMatchup-Prefix.pch"; sourceTree = "<group>"; };
+		504945821748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		504945841748517A00280208 /* TTMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMAppDelegate.h; sourceTree = "<group>"; };
+		504945851748517A00280208 /* TTMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMAppDelegate.m; sourceTree = "<group>"; };
+		504945881748517B00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5049456B1748517A00280208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504945731748517A00280208 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504945631748517A00280208 = {
+			isa = PBXGroup;
+			children = (
+				504945781748517A00280208 /* TableTennisMatchup */,
+				504945711748517A00280208 /* Frameworks */,
+				5049456F1748517A00280208 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5049456F1748517A00280208 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5049456E1748517A00280208 /* TableTennisMatchup.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		504945711748517A00280208 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504945721748517A00280208 /* Cocoa.framework */,
+				504945741748517A00280208 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		504945741748517A00280208 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504945751748517A00280208 /* AppKit.framework */,
+				504945761748517A00280208 /* CoreData.framework */,
+				504945771748517A00280208 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		504945781748517A00280208 /* TableTennisMatchup */ = {
+			isa = PBXGroup;
+			children = (
+				504945841748517A00280208 /* TTMAppDelegate.h */,
+				504945851748517A00280208 /* TTMAppDelegate.m */,
+				504945871748517B00280208 /* MainMenu.xib */,
+				504945791748517A00280208 /* Supporting Files */,
+			);
+			path = TableTennisMatchup;
+			sourceTree = "<group>";
+		};
+		504945791748517A00280208 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5049457A1748517A00280208 /* TableTennisMatchup-Info.plist */,
+				5049457B1748517A00280208 /* InfoPlist.strings */,
+				5049457E1748517A00280208 /* main.m */,
+				504945801748517A00280208 /* TableTennisMatchup-Prefix.pch */,
+				504945811748517A00280208 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5049456D1748517A00280208 /* TableTennisMatchup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisMatchup" */;
+			buildPhases = (
+				5049456A1748517A00280208 /* Sources */,
+				5049456B1748517A00280208 /* Frameworks */,
+				5049456C1748517A00280208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TableTennisMatchup;
+			productName = TableTennisMatchup;
+			productReference = 5049456E1748517A00280208 /* TableTennisMatchup.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		504945651748517A00280208 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TTM;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Sheel's Code";
+			};
+			buildConfigurationList = 504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisMatchup" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 504945631748517A00280208;
+			productRefGroup = 5049456F1748517A00280208 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5049456D1748517A00280208 /* TableTennisMatchup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5049456C1748517A00280208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5049457D1748517A00280208 /* InfoPlist.strings in Resources */,
+				504945831748517A00280208 /* Credits.rtf in Resources */,
+				504945891748517B00280208 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5049456A1748517A00280208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5049457F1748517A00280208 /* main.m in Sources */,
+				504945861748517A00280208 /* TTMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5049457B1748517A00280208 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5049457C1748517A00280208 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		504945811748517A00280208 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504945821748517A00280208 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		504945871748517B00280208 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504945881748517B00280208 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5049458A1748517B00280208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5049458B1748517B00280208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5049458D1748517B00280208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TableTennisMatchup/TableTennisMatchup-Prefix.pch";
+				INFOPLIST_FILE = "TableTennisMatchup/TableTennisMatchup-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5049458E1748517B00280208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TableTennisMatchup/TableTennisMatchup-Prefix.pch";
+				INFOPLIST_FILE = "TableTennisMatchup/TableTennisMatchup-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisMatchup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5049458A1748517B00280208 /* Debug */,
+				5049458B1748517B00280208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisMatchup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5049458D1748517B00280208 /* Debug */,
+				5049458E1748517B00280208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 504945651748517A00280208 /* Project object */;
+}
