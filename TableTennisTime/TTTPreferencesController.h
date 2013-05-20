@@ -15,7 +15,6 @@
 @property (weak) IBOutlet NSImageView *status;
 
 - (TTTPreferencesController*) initWithRestClient: (TTTRestClient*) client;
-- (void)showIfNecessary;
 - (void)controlTextDidChange:(NSNotification *)notification;
 
 @end

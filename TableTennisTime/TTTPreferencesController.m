@@ -33,15 +33,6 @@ typedef void(^ImageTogglerBlock)(BOOL);
     return self;
 }
 
-- (void)showIfNecessary
-{
-    [client targetValid:^(BOOL valid){
-        if(!valid) {
-            [self showWindow:self];
-        }
-    }];
-}
-
 - (void) windowDidLoad
 {
     [super windowDidLoad];

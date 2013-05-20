@@ -19,19 +19,33 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    userSettings = [[NSUserDefaults alloc] init];
+    restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
+    
     [statusItem setMenu:statusMenu];
     [statusItem setTitle:@"TTT"];
     [statusItem setHighlightMode:YES];
     
-    userSettings = [[NSUserDefaults alloc] init];
-    restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
-    preferences = [[TTTPreferencesController alloc] initWithRestClient: restClient];
-    [preferences showIfNecessary];
+    [restClient targetValid:^(BOOL valid){
+        if(!valid) {
+            [self openPreferences:self];
+        }
+    }];
 }
 
 - (IBAction)openPreferences:(id)sender
 {
-    [preferences showWindow:self];
+    if(!preferences) {
+        preferences = [[TTTPreferencesController alloc] initWithRestClient: restClient];
+        [[preferences window] setLevel: NSPopUpMenuWindowLevel];
+        [preferences showWindow:self];
+        [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
+                                                          object:[preferences window]
+                                                           queue:nil
+                                                      usingBlock:^(NSNotification *notification) {
+                                                          preferences = nil;
+                                                      }];        
+    }
 }
 
 - (IBAction)createMatch:(id)sender
