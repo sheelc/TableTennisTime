@@ -7,12 +7,30 @@
 //
 
 #import "TTMAppDelegate.h"
+#import "TTMPreferencesController.h"
 
 @implementation TTMAppDelegate
+{
+    NSWindowController* preferences;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [statusItem setMenu:statusMenu];
+    [statusItem setTitle:@"TTM"];
+    [statusItem setHighlightMode:YES];
+    
+    restClient = [[TTMRestClient alloc] init];
+    preferences = [[TTMPreferencesController alloc] initWithRestClient: restClient];
+    [preferences showWindow:self];
+}
+
+- (IBAction)openPreferences:(id)sender {
+    [preferences showWindow:self];
+}
+
+- (IBAction)createMatch:(id)sender {
 }
 
 @end

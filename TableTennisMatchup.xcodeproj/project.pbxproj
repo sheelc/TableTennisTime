@@ -13,6 +13,12 @@
 		504945831748517A00280208 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 504945811748517A00280208 /* Credits.rtf */; };
 		504945861748517A00280208 /* TTMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945851748517A00280208 /* TTMAppDelegate.m */; };
 		504945891748517B00280208 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504945871748517B00280208 /* MainMenu.xib */; };
+		5049459F1748803C00280208 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459D1748803C00280208 /* check.png */; };
+		504945A01748803C00280208 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459E1748803C00280208 /* cross.png */; };
+		504945A4174897E100280208 /* TTMRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945A3174897E100280208 /* TTMRestClient.m */; };
+		504945AB1748BA2000280208 /* TTMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945AA1748BA2000280208 /* TTMResponse.m */; };
+		50D66F4A17494E000072DA97 /* TTMPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTMPreferencesController.m */; };
+		50D66F4B17494E000072DA97 /* TTMPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTMPreferencesController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,15 @@
 		504945841748517A00280208 /* TTMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMAppDelegate.h; sourceTree = "<group>"; };
 		504945851748517A00280208 /* TTMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMAppDelegate.m; sourceTree = "<group>"; };
 		504945881748517B00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5049459D1748803C00280208 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		5049459E1748803C00280208 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		504945A2174897E100280208 /* TTMRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMRestClient.h; sourceTree = "<group>"; };
+		504945A3174897E100280208 /* TTMRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMRestClient.m; sourceTree = "<group>"; };
+		504945A91748BA2000280208 /* TTMResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMResponse.h; sourceTree = "<group>"; };
+		504945AA1748BA2000280208 /* TTMResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMResponse.m; sourceTree = "<group>"; };
+		50D66F4717494E000072DA97 /* TTMPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMPreferencesController.h; sourceTree = "<group>"; };
+		50D66F4817494E000072DA97 /* TTMPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMPreferencesController.m; sourceTree = "<group>"; };
+		50D66F4917494E000072DA97 /* TTMPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMPreferencesController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +61,10 @@
 		504945631748517A00280208 = {
 			isa = PBXGroup;
 			children = (
-				504945781748517A00280208 /* TableTennisMatchup */,
 				504945711748517A00280208 /* Frameworks */,
 				5049456F1748517A00280208 /* Products */,
+				5049459B17487CCB00280208 /* Resources */,
+				504945781748517A00280208 /* TableTennisMatchup */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,9 +98,13 @@
 		504945781748517A00280208 /* TableTennisMatchup */ = {
 			isa = PBXGroup;
 			children = (
+				504945A1174897B000280208 /* Models */,
 				504945841748517A00280208 /* TTMAppDelegate.h */,
 				504945851748517A00280208 /* TTMAppDelegate.m */,
 				504945871748517B00280208 /* MainMenu.xib */,
+				50D66F4717494E000072DA97 /* TTMPreferencesController.h */,
+				50D66F4817494E000072DA97 /* TTMPreferencesController.m */,
+				50D66F4917494E000072DA97 /* TTMPreferencesController.xib */,
 				504945791748517A00280208 /* Supporting Files */,
 			);
 			path = TableTennisMatchup;
@@ -100,6 +120,27 @@
 				504945811748517A00280208 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5049459B17487CCB00280208 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5049459D1748803C00280208 /* check.png */,
+				5049459E1748803C00280208 /* cross.png */,
+			);
+			name = Resources;
+			path = TableTennisMatchup;
+			sourceTree = "<group>";
+		};
+		504945A1174897B000280208 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				504945A2174897E100280208 /* TTMRestClient.h */,
+				504945A3174897E100280208 /* TTMRestClient.m */,
+				504945A91748BA2000280208 /* TTMResponse.h */,
+				504945AA1748BA2000280208 /* TTMResponse.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +198,9 @@
 				5049457D1748517A00280208 /* InfoPlist.strings in Resources */,
 				504945831748517A00280208 /* Credits.rtf in Resources */,
 				504945891748517B00280208 /* MainMenu.xib in Resources */,
+				5049459F1748803C00280208 /* check.png in Resources */,
+				504945A01748803C00280208 /* cross.png in Resources */,
+				50D66F4B17494E000072DA97 /* TTMPreferencesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +213,9 @@
 			files = (
 				5049457F1748517A00280208 /* main.m in Sources */,
 				504945861748517A00280208 /* TTMAppDelegate.m in Sources */,
+				504945A4174897E100280208 /* TTMRestClient.m in Sources */,
+				504945AB1748BA2000280208 /* TTMResponse.m in Sources */,
+				50D66F4A17494E000072DA97 /* TTMPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +345,7 @@
 				5049458E1748517B00280208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
