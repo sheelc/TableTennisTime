@@ -10,10 +10,6 @@
 
 typedef void(^ImageTogglerBlock)(BOOL);
 
-@interface TTMPreferencesController ()
-
-@end
-
 @implementation TTMPreferencesController
 {
     TTMRestClient* client;
@@ -37,16 +33,29 @@ typedef void(^ImageTogglerBlock)(BOOL);
     return self;
 }
 
+- (void)showIfNecessary
+{
+    [client targetValid:^(BOOL valid){
+        if(!valid) {
+            [self showWindow:self];
+        }
+    }];
+}
+
 - (void) windowDidLoad
 {
-    [_serverUrl setStringValue: client.target];
+    [super windowDidLoad];
+    if(client.target){
+        [_serverUrl setStringValue: client.target];
+    }
     [client targetValid: imageToggler];
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification
 {
     NSString* enteredUrl = [_serverUrl stringValue];
-    [client updateTarget:enteredUrl callback: imageToggler];
+    [client updateTarget:enteredUrl];
+    [client targetValid: imageToggler];
 }
 
 @end

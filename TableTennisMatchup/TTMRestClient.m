@@ -10,30 +10,21 @@
 #import "TTMResponse.h"
 
 @implementation TTMRestClient
-
-- (TTMRestClient*)init
 {
-    NSUserDefaults *userSettings = [[NSUserDefaults alloc] init];
+    NSUserDefaults* userSettings;
+}
+
+- (TTMRestClient*)initWithSettings: (NSUserDefaults*) settings
+{
+    userSettings = settings;
     self.target = [userSettings objectForKey:@"target"];
     return self;
 }
 
 - (void)updateTarget:(NSString*)target
 {
-    [self updateTarget:target callback:^(BOOL success){}];
-}
-
-- (void)updateTarget:(NSString*)target callback:(void ( ^ )(BOOL)) callback
-{
     self.target = target;
-    [self targetValid:^(BOOL valid) {
-        if (valid) {
-            [self persistTarget];
-            callback(YES);
-        } else {
-            callback(NO);
-        }
-    }];
+    [userSettings setObject:self.target forKey:@"target"];
 }
 
 - (void)targetValid:(void ( ^ )(BOOL))callback
@@ -61,12 +52,6 @@
         callback([TTMResponse initFromData:data error:error]);
      }
     ];
-}
-
-- (void)persistTarget
-{
-    NSUserDefaults *userSettings = [[NSUserDefaults alloc] init];
-    [userSettings setObject:self.target forKey:@"target"];
 }
 
 @end

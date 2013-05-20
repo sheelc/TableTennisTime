@@ -11,7 +11,9 @@
 
 @implementation TTMAppDelegate
 {
-    NSWindowController* preferences;
+    TTMPreferencesController* preferences;
+    TTMRestClient* restClient;
+    NSUserDefaults* userSettings;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -21,9 +23,10 @@
     [statusItem setTitle:@"TTM"];
     [statusItem setHighlightMode:YES];
     
-    restClient = [[TTMRestClient alloc] init];
+    userSettings = [[NSUserDefaults alloc] init];
+    restClient = [[TTMRestClient alloc] initWithSettings: userSettings];
     preferences = [[TTMPreferencesController alloc] initWithRestClient: restClient];
-    [preferences showWindow:self];
+    [preferences showIfNecessary];
 }
 
 - (IBAction)openPreferences:(id)sender {

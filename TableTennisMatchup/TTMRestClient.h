@@ -12,8 +12,8 @@
 
 @property (strong) NSString *target;
 
+- (TTMRestClient*)initWithSettings: (NSUserDefaults*) userSettings;
 - (void)updateTarget:(NSString*)target;
-- (void)updateTarget:(NSString*)target callback:(void ( ^ )(BOOL)) callback;
 - (void)targetValid:(void ( ^ )(BOOL))callback;
 - (void)get:(NSString*)path callback:(void ( ^ )(id)) callback;
 

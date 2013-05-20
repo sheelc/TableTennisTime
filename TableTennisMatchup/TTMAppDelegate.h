@@ -13,7 +13,6 @@
 {
     IBOutlet NSMenu* statusMenu;
     NSStatusItem* statusItem;
-    TTMRestClient* restClient;
 }
 
 @property (weak) IBOutlet NSMenuItem *createMatch;
