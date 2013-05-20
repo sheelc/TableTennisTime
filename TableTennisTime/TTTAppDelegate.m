@@ -8,10 +8,12 @@
 
 #import "TTTAppDelegate.h"
 #import "TTTPreferencesController.h"
+#import "TTTMatchesController.h"
 
 @implementation TTTAppDelegate
 {
     TTTPreferencesController* preferences;
+    TTTMatchesController* matches;
     TTTRestClient* restClient;
     NSUserDefaults* userSettings;
 }
@@ -50,6 +52,17 @@
 
 - (IBAction)createMatch:(id)sender
 {
+    if(!matches) {
+        matches = [[TTTMatchesController alloc] initWithWindowNibName:@"TTTMatchesController"];
+        [[matches window] setLevel: NSPopUpMenuWindowLevel];
+        [matches showWindow:self];
+        [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
+                                                          object:[matches window]
+                                                           queue:nil
+                                                      usingBlock:^(NSNotification *notification) {
+                                                          matches = nil;
+                                                      }];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
