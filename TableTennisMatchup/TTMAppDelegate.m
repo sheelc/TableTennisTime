@@ -29,11 +29,18 @@
     [preferences showIfNecessary];
 }
 
-- (IBAction)openPreferences:(id)sender {
+- (IBAction)openPreferences:(id)sender
+{
     [preferences showWindow:self];
 }
 
-- (IBAction)createMatch:(id)sender {
+- (IBAction)createMatch:(id)sender
+{
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    [userSettings synchronize];
 }
 
 @end
