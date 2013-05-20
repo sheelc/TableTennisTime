@@ -1,5 +1,5 @@
 //
-//  TTMResponse.h
+//  TTTResponse.h
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/19/13.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TTMResponse : NSObject
+@interface TTTResponse : NSObject
 
-+ (TTMResponse*) initFromData:(NSData*) data error:(NSError*) error;
++ (TTTResponse*) initFromData:(NSData*) data error:(NSError*) error;
 - (BOOL) success;
 - (NSDictionary*) json;
 

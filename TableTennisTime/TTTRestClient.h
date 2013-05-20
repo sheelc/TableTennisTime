@@ -1,5 +1,5 @@
 //
-//  TTMRestClient.h
+//  TTTRestClient.h
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/18/13.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TTMRestClient : NSObject
+@interface TTTRestClient : NSObject
 
 @property (strong) NSString *target;
 
-- (TTMRestClient*)initWithSettings: (NSUserDefaults*) userSettings;
+- (TTTRestClient*)initWithSettings: (NSUserDefaults*) userSettings;
 - (void)updateTarget:(NSString*)target;
 - (void)targetValid:(void ( ^ )(BOOL))callback;
 - (void)get:(NSString*)path callback:(void ( ^ )(id)) callback;

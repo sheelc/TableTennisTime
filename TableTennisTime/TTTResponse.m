@@ -1,23 +1,23 @@
 //
-//  TTMResponse.m
+//  TTTResponse.m
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/19/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
-#import "TTMResponse.h"
+#import "TTTResponse.h"
 
-@implementation TTMResponse
+@implementation TTTResponse
 {
     NSData* _data;
     NSError* _error;
 }
 
-+ (TTMResponse*) initFromData:(NSData*) data error:(NSError*) error
++ (TTTResponse*) initFromData:(NSData*) data error:(NSError*) error
 {
-    TTMResponse *response;
-    if ((response = [TTMResponse alloc])) {
+    TTTResponse *response;
+    if ((response = [TTTResponse alloc])) {
         response->_data = data;
         response->_error = error;
     }

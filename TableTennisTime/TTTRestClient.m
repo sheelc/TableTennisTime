@@ -1,20 +1,20 @@
 //
-//  TTMRestClient.m
+//  TTTRestClient.m
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/18/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
-#import "TTMRestClient.h"
-#import "TTMResponse.h"
+#import "TTTRestClient.h"
+#import "TTTResponse.h"
 
-@implementation TTMRestClient
+@implementation TTTRestClient
 {
     NSUserDefaults* userSettings;
 }
 
-- (TTMRestClient*)initWithSettings: (NSUserDefaults*) settings
+- (TTTRestClient*)initWithSettings: (NSUserDefaults*) settings
 {
     userSettings = settings;
     self.target = [userSettings objectForKey:@"target"];
@@ -29,7 +29,7 @@
 
 - (void)targetValid:(void ( ^ )(BOOL))callback
 {
-    [self get:@"/info" callback: ^(TTMResponse* response) {
+    [self get:@"/info" callback: ^(TTTResponse* response) {
         if([response success]){
             callback(YES);
         } else {
@@ -49,7 +49,7 @@
      sendAsynchronousRequest:theRequest
      queue: [NSOperationQueue mainQueue]
      completionHandler:^(NSURLResponse* response, NSData* data, NSError* error){
-        callback([TTMResponse initFromData:data error:error]);
+        callback([TTTResponse initFromData:data error:error]);
      }
     ];
 }

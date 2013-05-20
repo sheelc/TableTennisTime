@@ -1,24 +1,24 @@
 //
-//  TTMPreferences.m
+//  TTTPreferences.m
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/19/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
-#import "TTMPreferencesController.h"
+#import "TTTPreferencesController.h"
 
 typedef void(^ImageTogglerBlock)(BOOL);
 
-@implementation TTMPreferencesController
+@implementation TTTPreferencesController
 {
-    TTMRestClient* client;
+    TTTRestClient* client;
     ImageTogglerBlock imageToggler;
 }
 
-- (TTMPreferencesController*) initWithRestClient:(TTMRestClient *)restClient
+- (TTTPreferencesController*) initWithRestClient:(TTTRestClient *)restClient
 {
-    if (self = [super initWithWindowNibName:@"TTMPreferencesController" owner:self])
+    if (self = [super initWithWindowNibName:@"TTTPreferencesController" owner:self])
     {
         client = restClient;
         imageToggler = ^(BOOL valid){

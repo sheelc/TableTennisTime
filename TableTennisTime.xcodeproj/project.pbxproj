@@ -11,39 +11,39 @@
 		5049457D1748517A00280208 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5049457B1748517A00280208 /* InfoPlist.strings */; };
 		5049457F1748517A00280208 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5049457E1748517A00280208 /* main.m */; };
 		504945831748517A00280208 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 504945811748517A00280208 /* Credits.rtf */; };
-		504945861748517A00280208 /* TTMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945851748517A00280208 /* TTMAppDelegate.m */; };
+		504945861748517A00280208 /* TTTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945851748517A00280208 /* TTTAppDelegate.m */; };
 		504945891748517B00280208 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504945871748517B00280208 /* MainMenu.xib */; };
 		5049459F1748803C00280208 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459D1748803C00280208 /* check.png */; };
 		504945A01748803C00280208 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459E1748803C00280208 /* cross.png */; };
-		504945A4174897E100280208 /* TTMRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945A3174897E100280208 /* TTMRestClient.m */; };
-		504945AB1748BA2000280208 /* TTMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945AA1748BA2000280208 /* TTMResponse.m */; };
-		50D66F4A17494E000072DA97 /* TTMPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTMPreferencesController.m */; };
-		50D66F4B17494E000072DA97 /* TTMPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTMPreferencesController.xib */; };
+		504945A4174897E100280208 /* TTTRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945A3174897E100280208 /* TTTRestClient.m */; };
+		504945AB1748BA2000280208 /* TTTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945AA1748BA2000280208 /* TTTResponse.m */; };
+		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
+		50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTTPreferencesController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5049456E1748517A00280208 /* TableTennisMatchup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTennisMatchup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5049456E1748517A00280208 /* TableTennisTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTennisTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504945721748517A00280208 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		504945751748517A00280208 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		504945761748517A00280208 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		504945771748517A00280208 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		5049457A1748517A00280208 /* TableTennisMatchup-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableTennisMatchup-Info.plist"; sourceTree = "<group>"; };
+		5049457A1748517A00280208 /* TableTennisTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableTennisTime-Info.plist"; sourceTree = "<group>"; };
 		5049457C1748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5049457E1748517A00280208 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		504945801748517A00280208 /* TableTennisMatchup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableTennisMatchup-Prefix.pch"; sourceTree = "<group>"; };
+		504945801748517A00280208 /* TableTennisTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableTennisTime-Prefix.pch"; sourceTree = "<group>"; };
 		504945821748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		504945841748517A00280208 /* TTMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMAppDelegate.h; sourceTree = "<group>"; };
-		504945851748517A00280208 /* TTMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMAppDelegate.m; sourceTree = "<group>"; };
+		504945841748517A00280208 /* TTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTAppDelegate.h; sourceTree = "<group>"; };
+		504945851748517A00280208 /* TTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTAppDelegate.m; sourceTree = "<group>"; };
 		504945881748517B00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5049459D1748803C00280208 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		5049459E1748803C00280208 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
-		504945A2174897E100280208 /* TTMRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMRestClient.h; sourceTree = "<group>"; };
-		504945A3174897E100280208 /* TTMRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMRestClient.m; sourceTree = "<group>"; };
-		504945A91748BA2000280208 /* TTMResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMResponse.h; sourceTree = "<group>"; };
-		504945AA1748BA2000280208 /* TTMResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMResponse.m; sourceTree = "<group>"; };
-		50D66F4717494E000072DA97 /* TTMPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMPreferencesController.h; sourceTree = "<group>"; };
-		50D66F4817494E000072DA97 /* TTMPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMPreferencesController.m; sourceTree = "<group>"; };
-		50D66F4917494E000072DA97 /* TTMPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTMPreferencesController.xib; sourceTree = "<group>"; };
+		504945A2174897E100280208 /* TTTRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTRestClient.h; sourceTree = "<group>"; };
+		504945A3174897E100280208 /* TTTRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTRestClient.m; sourceTree = "<group>"; };
+		504945A91748BA2000280208 /* TTTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTResponse.h; sourceTree = "<group>"; };
+		504945AA1748BA2000280208 /* TTTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTResponse.m; sourceTree = "<group>"; };
+		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPreferencesController.h; sourceTree = "<group>"; };
+		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPreferencesController.m; sourceTree = "<group>"; };
+		50D66F4917494E000072DA97 /* TTTPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTPreferencesController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +64,14 @@
 				504945711748517A00280208 /* Frameworks */,
 				5049456F1748517A00280208 /* Products */,
 				5049459B17487CCB00280208 /* Resources */,
-				504945781748517A00280208 /* TableTennisMatchup */,
+				504945781748517A00280208 /* TableTennisTime */,
 			);
 			sourceTree = "<group>";
 		};
 		5049456F1748517A00280208 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5049456E1748517A00280208 /* TableTennisMatchup.app */,
+				5049456E1748517A00280208 /* TableTennisTime.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,28 +95,28 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		504945781748517A00280208 /* TableTennisMatchup */ = {
+		504945781748517A00280208 /* TableTennisTime */ = {
 			isa = PBXGroup;
 			children = (
 				504945A1174897B000280208 /* Models */,
-				504945841748517A00280208 /* TTMAppDelegate.h */,
-				504945851748517A00280208 /* TTMAppDelegate.m */,
+				504945841748517A00280208 /* TTTAppDelegate.h */,
+				504945851748517A00280208 /* TTTAppDelegate.m */,
 				504945871748517B00280208 /* MainMenu.xib */,
-				50D66F4717494E000072DA97 /* TTMPreferencesController.h */,
-				50D66F4817494E000072DA97 /* TTMPreferencesController.m */,
-				50D66F4917494E000072DA97 /* TTMPreferencesController.xib */,
+				50D66F4717494E000072DA97 /* TTTPreferencesController.h */,
+				50D66F4817494E000072DA97 /* TTTPreferencesController.m */,
+				50D66F4917494E000072DA97 /* TTTPreferencesController.xib */,
 				504945791748517A00280208 /* Supporting Files */,
 			);
-			path = TableTennisMatchup;
+			path = TableTennisTime;
 			sourceTree = "<group>";
 		};
 		504945791748517A00280208 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5049457A1748517A00280208 /* TableTennisMatchup-Info.plist */,
+				5049457A1748517A00280208 /* TableTennisTime-Info.plist */,
 				5049457B1748517A00280208 /* InfoPlist.strings */,
 				5049457E1748517A00280208 /* main.m */,
-				504945801748517A00280208 /* TableTennisMatchup-Prefix.pch */,
+				504945801748517A00280208 /* TableTennisTime-Prefix.pch */,
 				504945811748517A00280208 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -129,16 +129,16 @@
 				5049459E1748803C00280208 /* cross.png */,
 			);
 			name = Resources;
-			path = TableTennisMatchup;
+			path = TableTennisTime;
 			sourceTree = "<group>";
 		};
 		504945A1174897B000280208 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				504945A2174897E100280208 /* TTMRestClient.h */,
-				504945A3174897E100280208 /* TTMRestClient.m */,
-				504945A91748BA2000280208 /* TTMResponse.h */,
-				504945AA1748BA2000280208 /* TTMResponse.m */,
+				504945A2174897E100280208 /* TTTRestClient.h */,
+				504945A3174897E100280208 /* TTTRestClient.m */,
+				504945A91748BA2000280208 /* TTTResponse.h */,
+				504945AA1748BA2000280208 /* TTTResponse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5049456D1748517A00280208 /* TableTennisMatchup */ = {
+		5049456D1748517A00280208 /* TableTennisTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisMatchup" */;
+			buildConfigurationList = 5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisTime" */;
 			buildPhases = (
 				5049456A1748517A00280208 /* Sources */,
 				5049456B1748517A00280208 /* Frameworks */,
@@ -158,9 +158,9 @@
 			);
 			dependencies = (
 			);
-			name = TableTennisMatchup;
+			name = TableTennisTime;
 			productName = TableTennisMatchup;
-			productReference = 5049456E1748517A00280208 /* TableTennisMatchup.app */;
+			productReference = 5049456E1748517A00280208 /* TableTennisTime.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,11 +169,11 @@
 		504945651748517A00280208 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = TTM;
+				CLASSPREFIX = TTT;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Sheel's Code";
 			};
-			buildConfigurationList = 504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisMatchup" */;
+			buildConfigurationList = 504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisTime" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5049456D1748517A00280208 /* TableTennisMatchup */,
+				5049456D1748517A00280208 /* TableTennisTime */,
 			);
 		};
 /* End PBXProject section */
@@ -200,7 +200,7 @@
 				504945891748517B00280208 /* MainMenu.xib in Resources */,
 				5049459F1748803C00280208 /* check.png in Resources */,
 				504945A01748803C00280208 /* cross.png in Resources */,
-				50D66F4B17494E000072DA97 /* TTMPreferencesController.xib in Resources */,
+				50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,10 +212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5049457F1748517A00280208 /* main.m in Sources */,
-				504945861748517A00280208 /* TTMAppDelegate.m in Sources */,
-				504945A4174897E100280208 /* TTMRestClient.m in Sources */,
-				504945AB1748BA2000280208 /* TTMResponse.m in Sources */,
-				50D66F4A17494E000072DA97 /* TTMPreferencesController.m in Sources */,
+				504945861748517A00280208 /* TTTAppDelegate.m in Sources */,
+				504945A4174897E100280208 /* TTTRestClient.m in Sources */,
+				504945AB1748BA2000280208 /* TTTResponse.m in Sources */,
+				50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +307,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableTennisMatchup/TableTennisMatchup-Prefix.pch";
-				INFOPLIST_FILE = "TableTennisMatchup/TableTennisMatchup-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TableTennisTime/TableTennisTime-Prefix.pch";
+				INFOPLIST_FILE = "TableTennisTime/TableTennisTime-Info.plist";
+				PRODUCT_NAME = TableTennisTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -319,9 +319,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableTennisMatchup/TableTennisMatchup-Prefix.pch";
-				INFOPLIST_FILE = "TableTennisMatchup/TableTennisMatchup-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TableTennisTime/TableTennisTime-Prefix.pch";
+				INFOPLIST_FILE = "TableTennisTime/TableTennisTime-Info.plist";
+				PRODUCT_NAME = TableTennisTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -329,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisMatchup" */ = {
+		504945681748517A00280208 /* Build configuration list for PBXProject "TableTennisTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5049458A1748517B00280208 /* Debug */,
@@ -338,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisMatchup" */ = {
+		5049458C1748517B00280208 /* Build configuration list for PBXNativeTarget "TableTennisTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5049458D1748517B00280208 /* Debug */,

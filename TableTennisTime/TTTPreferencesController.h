@@ -1,5 +1,5 @@
 //
-//  TTMPreferences.h
+//  TTTPreferences.h
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/19/13.
@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TTMRestClient.h"
+#import "TTTRestClient.h"
 
-@interface TTMPreferencesController : NSWindowController
+@interface TTTPreferencesController : NSWindowController
 
 @property (weak) IBOutlet NSTextField *serverUrl;
 @property (weak) IBOutlet NSImageView *status;
 
-- (TTMPreferencesController*) initWithRestClient: (TTMRestClient*) client;
+- (TTTPreferencesController*) initWithRestClient: (TTTRestClient*) client;
 - (void)showIfNecessary;
 - (void)controlTextDidChange:(NSNotification *)notification;
 

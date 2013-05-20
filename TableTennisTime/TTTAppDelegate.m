@@ -1,18 +1,18 @@
 //
-//  TTMAppDelegate.m
+//  TTTAppDelegate.m
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/18/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
-#import "TTMAppDelegate.h"
-#import "TTMPreferencesController.h"
+#import "TTTAppDelegate.h"
+#import "TTTPreferencesController.h"
 
-@implementation TTMAppDelegate
+@implementation TTTAppDelegate
 {
-    TTMPreferencesController* preferences;
-    TTMRestClient* restClient;
+    TTTPreferencesController* preferences;
+    TTTRestClient* restClient;
     NSUserDefaults* userSettings;
 }
 
@@ -20,12 +20,12 @@
 {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
-    [statusItem setTitle:@"TTM"];
+    [statusItem setTitle:@"TTT"];
     [statusItem setHighlightMode:YES];
     
     userSettings = [[NSUserDefaults alloc] init];
-    restClient = [[TTMRestClient alloc] initWithSettings: userSettings];
-    preferences = [[TTMPreferencesController alloc] initWithRestClient: restClient];
+    restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
+    preferences = [[TTTPreferencesController alloc] initWithRestClient: restClient];
     [preferences showIfNecessary];
 }
 

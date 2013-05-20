@@ -1,5 +1,5 @@
 //
-//  TTMAppDelegate.h
+//  TTTAppDelegate.h
 //  TableTennisMatchup
 //
 //  Created by Sheel Choksi on 5/18/13.
@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TTMRestClient.h"
+#import "TTTRestClient.h"
 
-@interface TTMAppDelegate : NSObject <NSApplicationDelegate>
+@interface TTTAppDelegate : NSObject <NSApplicationDelegate>
 {
     IBOutlet NSMenu* statusMenu;
     NSStatusItem* statusItem;
