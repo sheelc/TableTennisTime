@@ -40,16 +40,42 @@
 
 - (void)get:(NSString*)path callback:(void ( ^ )(id)) callback
 {
-    NSString* url = [self.target stringByAppendingString:path];
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
-                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                          timeoutInterval:60.0];
+    [self makeRequest:path withCallback:callback];
+}
 
+- (void)post:(NSString*)path options:(NSDictionary*)body callback:(void ( ^ )(id)) callback
+{
+    [self
+     makeRequest:path
+     requestCustomization:^(NSMutableURLRequest* theRequest) {
+        NSError* jsonParseErrors;
+        
+        [theRequest setHTTPMethod:@"POST"];
+        [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+        [theRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:body options:0 error: &jsonParseErrors]];
+     }
+     withCallback:callback];
+    
+}
+
+- (void) makeRequest: (NSString*)path withCallback:(void (^)(TTTResponse*)) callback
+{
+    [self makeRequest:path requestCustomization:^(NSMutableURLRequest* theRequest){} withCallback:callback];
+}
+
+- (void) makeRequest: (NSString*)path requestCustomization:(void ( ^ )(NSMutableURLRequest*)) requestCustomization withCallback:(void (^)(TTTResponse*)) callback
+{
+    NSString* url = [self.target stringByAppendingString:path];
+    NSMutableURLRequest* theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                        timeoutInterval:60.0];
+    requestCustomization(theRequest);
+    
     [NSURLConnection
      sendAsynchronousRequest:theRequest
      queue: [NSOperationQueue mainQueue]
      completionHandler:^(NSURLResponse* response, NSData* data, NSError* error){
-        callback([TTTResponse initFromData:data error:error]);
+         callback([TTTResponse initFromData:data error:error]);
      }
     ];
 }

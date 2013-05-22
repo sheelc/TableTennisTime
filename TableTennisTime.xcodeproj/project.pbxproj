@@ -17,6 +17,7 @@
 		504945A01748803C00280208 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459E1748803C00280208 /* cross.png */; };
 		504945A4174897E100280208 /* TTTRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945A3174897E100280208 /* TTTRestClient.m */; };
 		504945AB1748BA2000280208 /* TTTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945AA1748BA2000280208 /* TTTResponse.m */; };
+		5059D823174B437200F626B9 /* TTTMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5059D822174B437200F626B9 /* TTTMatch.m */; };
 		50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50722E651749FB7C00000C56 /* TTTMatchesController.m */; };
 		50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50722E661749FB7C00000C56 /* TTTMatchesController.xib */; };
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
@@ -43,6 +44,8 @@
 		504945A3174897E100280208 /* TTTRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTRestClient.m; sourceTree = "<group>"; };
 		504945A91748BA2000280208 /* TTTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTResponse.h; sourceTree = "<group>"; };
 		504945AA1748BA2000280208 /* TTTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTResponse.m; sourceTree = "<group>"; };
+		5059D821174B437200F626B9 /* TTTMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatch.h; sourceTree = "<group>"; };
+		5059D822174B437200F626B9 /* TTTMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMatch.m; sourceTree = "<group>"; };
 		50722E641749FB7C00000C56 /* TTTMatchesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatchesController.h; sourceTree = "<group>"; };
 		50722E651749FB7C00000C56 /* TTTMatchesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMatchesController.m; sourceTree = "<group>"; };
 		50722E661749FB7C00000C56 /* TTTMatchesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchesController.xib; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				504945A3174897E100280208 /* TTTRestClient.m */,
 				504945A91748BA2000280208 /* TTTResponse.h */,
 				504945AA1748BA2000280208 /* TTTResponse.m */,
+				5059D821174B437200F626B9 /* TTTMatch.h */,
+				5059D822174B437200F626B9 /* TTTMatch.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				504945AB1748BA2000280208 /* TTTResponse.m in Sources */,
 				50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */,
 				50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */,
+				5059D823174B437200F626B9 /* TTTMatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

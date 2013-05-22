@@ -9,12 +9,14 @@
 #import "TTTAppDelegate.h"
 #import "TTTPreferencesController.h"
 #import "TTTMatchesController.h"
+#import "TTTMatch.h"
 
 @implementation TTTAppDelegate
 {
     TTTPreferencesController* preferences;
     TTTMatchesController* matches;
     TTTRestClient* restClient;
+    TTTMatch* match;
     NSUserDefaults* userSettings;
 }
 
@@ -23,6 +25,7 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     userSettings = [[NSUserDefaults alloc] init];
     restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
+    match = [[TTTMatch alloc] initWithSettings:userSettings andRestClient:restClient];
     
     [statusItem setMenu:statusMenu];
     [statusItem setTitle:@"TTT"];
@@ -53,7 +56,7 @@
 - (IBAction)createMatch:(id)sender
 {
     if(!matches) {
-        matches = [[TTTMatchesController alloc] initWithWindowNibName:@"TTTMatchesController"];
+        matches = [[TTTMatchesController alloc] initWithMatch: match];
         [[matches window] setLevel: NSPopUpMenuWindowLevel];
         [matches showWindow:self];
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification

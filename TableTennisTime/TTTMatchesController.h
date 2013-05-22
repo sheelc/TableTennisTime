@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TTTMatch.h"
 
 @interface TTTMatchesController : NSWindowController
 @property (weak) IBOutlet NSTextField *playerNames;
 @property (weak) IBOutlet NSMatrix *numPlayers;
 @property (weak) IBOutlet NSMatrix *matchType;
 
+- (TTTMatchesController*)initWithMatch:(TTTMatch*)match;
 - (IBAction)numPlayersChanged:(id)sender;
+- (IBAction)createMatch:(id)sender;
 @end
