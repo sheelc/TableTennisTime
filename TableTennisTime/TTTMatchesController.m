@@ -11,23 +11,40 @@
 @implementation TTTMatchesController
 {
     TTTMatch* match;
-}
-
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSMutableAttributedString* placeholder;
 }
 
 - (TTTMatchesController*)initWithMatch:(TTTMatch*)selectedMatch
 {
     self = [super initWithWindowNibName:@"TTTMatchesController"];
     match = selectedMatch;
+    placeholder = [[NSMutableAttributedString alloc] initWithString:@"Jack & Jill (Required)" attributes:@{NSForegroundColorAttributeName: [NSColor grayColor]}];
     return self;
 }
 
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+    [[self.playerNames cell] setPlaceholderAttributedString:placeholder];
+    if(match.names) {
+        [self.playerNames setStringValue:match.names];
+    }
+    if (match.numPlayers) {
+        [self.numPlayers selectCellAtRow:0 column:[match.numPlayers intValue] - 1];
+    }
+    if (match.matchType) {
+        [self.matchType selectCellAtRow:0 column: [match.matchType isEqualToString:@"singles"] ? 0 : 1];
+    }
+    [self toggleSinglesOption];
+
+}
+
 - (IBAction)numPlayersChanged:(id)sender
+{
+    [self toggleSinglesOption];
+}
+
+- (void) toggleSinglesOption
 {
     if([self.numPlayers selectedColumn] > 0) {
         [[self.matchType cellWithTag:1] setState: NSOffState];
@@ -35,7 +52,6 @@
         [[self.matchType cellWithTag:1] setEnabled: NO];
         [self.matchType selectCellAtRow:0 column:1];
     } else {
-        [self.matchType selectCellAtRow:0 column:0];
         [[self.matchType cellWithTag:1] setEnabled: YES];
     }
 }
@@ -45,8 +61,8 @@
     if(![[self.playerNames stringValue] length]) {
         [self.playerNames setBackgroundColor:[NSColor redColor]];
         [self.playerNames setTextColor:[NSColor whiteColor]];
-        NSString* placeholder = [[self.playerNames cell] placeholderString];
-        [[self.playerNames cell] setPlaceholderAttributedString:[[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName: [NSColor whiteColor]}]];
+        [placeholder setAttributes:@{NSForegroundColorAttributeName: [NSColor whiteColor]} range:NSMakeRange(0,[placeholder length])];
+        [[self.playerNames cell] setPlaceholderAttributedString:placeholder];
         return;
     }
     
