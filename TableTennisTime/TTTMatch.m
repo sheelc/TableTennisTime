@@ -14,11 +14,15 @@
     TTTRestClient* client;
 }
 
-- (TTTMatch*)initWithSettings:(NSUserDefaults*)userSettings andRestClient:(TTTRestClient*)restClient
+- (id)initWithSettings:(NSUserDefaults*)userSettings andRestClient:(TTTRestClient*)restClient
 {
-    settings = userSettings;
-    client = restClient;
-    [self refreshFromSettings];
+    self = [super init];
+    if (self) {
+        settings = userSettings;
+        client = restClient;
+        [self refreshFromSettings];
+    }
+
     return self;
 }
 

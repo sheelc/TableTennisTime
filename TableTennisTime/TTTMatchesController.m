@@ -14,11 +14,14 @@
     NSMutableAttributedString* placeholder;
 }
 
-- (TTTMatchesController*)initWithMatch:(TTTMatch*)selectedMatch
+- (id)initWithMatch:(TTTMatch*)selectedMatch
 {
     self = [super initWithWindowNibName:@"TTTMatchesController"];
-    match = selectedMatch;
-    placeholder = [[NSMutableAttributedString alloc] initWithString:@"Jack & Jill (Required)" attributes:@{NSForegroundColorAttributeName: [NSColor grayColor]}];
+    if (self) {
+        match = selectedMatch;
+        placeholder = [[NSMutableAttributedString alloc] initWithString:@"Jack & Jill (Required)" attributes:@{NSForegroundColorAttributeName: [NSColor grayColor]}];
+    }
+
     return self;
 }
 

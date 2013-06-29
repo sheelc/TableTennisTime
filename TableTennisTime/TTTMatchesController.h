@@ -14,7 +14,7 @@
 @property (weak) IBOutlet NSMatrix *numPlayers;
 @property (weak) IBOutlet NSMatrix *matchType;
 
-- (TTTMatchesController*)initWithMatch:(TTTMatch*)match;
+- (id)initWithMatch:(TTTMatch*)match;
 - (IBAction)numPlayersChanged:(id)sender;
 - (IBAction)createMatch:(id)sender;
 @end

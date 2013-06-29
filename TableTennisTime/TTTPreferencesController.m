@@ -16,10 +16,10 @@ typedef void(^ImageTogglerBlock)(BOOL);
     ImageTogglerBlock imageToggler;
 }
 
-- (TTTPreferencesController*) initWithRestClient:(TTTRestClient *)restClient
+- (id) initWithRestClient:(TTTRestClient *)restClient
 {
-    if (self = [super initWithWindowNibName:@"TTTPreferencesController" owner:self])
-    {
+    self = [super initWithWindowNibName:@"TTTPreferencesController" owner:self];
+    if (self){
         client = restClient;
         imageToggler = ^(BOOL valid){
             if(valid){

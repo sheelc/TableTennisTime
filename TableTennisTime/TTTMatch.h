@@ -15,6 +15,6 @@
 @property (strong) NSNumber* numPlayers;
 @property (strong) NSString* matchType;
 
-- (TTTMatch*)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
+- (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
 - (void)createMatchFromOptions:(NSDictionary*)options;
 @end

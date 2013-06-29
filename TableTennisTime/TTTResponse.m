@@ -10,36 +10,36 @@
 
 @implementation TTTResponse
 {
-    NSData* _data;
-    NSError* _error;
+    NSData* data;
+    NSError* error;
 }
 
-+ (TTTResponse*) initFromData:(NSData*) data error:(NSError*) error
+- (id) initFromData:(NSData*) newData error:(NSError*) newError
 {
-    TTTResponse *response;
-    if ((response = [TTTResponse alloc])) {
-        response->_data = data;
-        response->_error = error;
+    self = [super init];
+    if (self) {
+        data = newData;
+        error = newError;
     }
-    return response;
+    return self;
 }
 
 - (BOOL) success
 {
-    if(self->_error) {
+    if(error) {
         return false;
     }
     
     NSError* jsonParseErrors;
     id json;
-    json = [NSJSONSerialization JSONObjectWithData:self->_data options:0 error:&jsonParseErrors];
+    json = [NSJSONSerialization JSONObjectWithData: data options:0 error:&jsonParseErrors];
     return !jsonParseErrors && [json isKindOfClass:[NSDictionary class]];
 }
 
 - (NSDictionary*) json
 {
     NSError* jsonParseErrors;
-    return ((NSDictionary*) [NSJSONSerialization JSONObjectWithData:self->_data options:0 error:&jsonParseErrors]);
+    return ((NSDictionary*) [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParseErrors]);
 }
 
 @end

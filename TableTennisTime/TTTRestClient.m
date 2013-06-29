@@ -14,10 +14,13 @@
     NSUserDefaults* userSettings;
 }
 
-- (TTTRestClient*)initWithSettings: (NSUserDefaults*) settings
+- (id)initWithSettings: (NSUserDefaults*) settings
 {
-    userSettings = settings;
-    self.target = [userSettings objectForKey:@"target"];
+    self = [super init];
+    if (self) {
+        userSettings = settings;
+        self.target = [userSettings objectForKey:@"target"];
+    }
     return self;
 }
 
@@ -75,7 +78,7 @@
      sendAsynchronousRequest:theRequest
      queue: [NSOperationQueue mainQueue]
      completionHandler:^(NSURLResponse* response, NSData* data, NSError* error){
-         callback([TTTResponse initFromData:data error:error]);
+         callback([[TTTResponse alloc] initFromData:data error:error]);
      }
     ];
 }

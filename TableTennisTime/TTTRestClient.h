@@ -12,7 +12,7 @@
 
 @property (strong) NSString *target;
 
-- (TTTRestClient*)initWithSettings: (NSUserDefaults*) userSettings;
+- (id)initWithSettings: (NSUserDefaults*) userSettings;
 - (void)updateTarget:(NSString*)target;
 - (void)targetValid:(void ( ^ )(BOOL))callback;
 - (void)get:(NSString*)path callback:(void ( ^ )(id)) callback;
