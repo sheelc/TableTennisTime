@@ -33,6 +33,7 @@
 {
     if ([object isEqualTo:match] && [keyPath isEqualToString:@"opponentNames"]) {
         if ([change objectForKey:@"new"] != (id)[NSNull null]) {
+            [[self window] setLevel: NSPopUpMenuWindowLevel];
             [self showWindow:self];
         }
     }
