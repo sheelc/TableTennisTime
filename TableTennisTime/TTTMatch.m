@@ -7,6 +7,7 @@
 //
 
 #import "TTTMatch.h"
+#import "TTTResponse.h"
 #import <Foundation/NSTimer.h>
 
 #define POLLING_INTERVAL (10.0)
@@ -30,7 +31,7 @@
     return self;
 }
 
-- (void)createMatchFromOptions:(NSDictionary*)options onSuccess: (void (^)(void)) callback
+- (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback
 {
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop){
         [settings setObject:obj forKey:key];
@@ -41,8 +42,8 @@
             self.pollingGuid = [[resp json] objectForKey:@"guid"];
             timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForMatchUpdates) userInfo:NULL repeats:YES];
             [timer fire];
-            callback();
         }
+        callback([resp success]);
     }];
 }
 

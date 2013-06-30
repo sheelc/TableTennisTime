@@ -28,6 +28,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+
     [[self.playerNames cell] setPlaceholderAttributedString:placeholder];
     if(match.names) {
         [self.playerNames setStringValue:match.names];
@@ -38,8 +39,9 @@
     if (match.matchType) {
         [self.matchType selectCellAtRow:0 column: [match.matchType isEqualToString:@"singles"] ? 0 : 1];
     }
-    [self toggleSinglesOption];
 
+    [self toggleSinglesOption];
+    [self.errorMessage setHidden:YES];
 }
 
 - (IBAction)numPlayersChanged:(id)sender
@@ -77,8 +79,12 @@
     
     [options setValue:[[[self.matchType selectedCell] title] lowercaseString] forKey:@"matchType"];
     
-  [match createMatchFromOptions:options onSuccess: ^(void) {
-    [[self window] close];
+  [match createMatchFromOptions:options onComplete: ^(BOOL success) {
+    if(success) {
+      [[self window] close];
+    } else {
+      [self.errorMessage setHidden:NO];
+    }
   }];
 }
 

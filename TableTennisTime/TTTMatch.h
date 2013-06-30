@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "TTTRestClient.h"
-#import "TTTResponse.h"
 
 @interface TTTMatch : NSObject
 
@@ -19,5 +18,5 @@
 @property (strong) NSString* matchType;
 
 - (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
-- (void)createMatchFromOptions:(NSDictionary*)options onSuccess: (void (^)(void)) callback;
+- (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback;
 @end
