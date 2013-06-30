@@ -38,7 +38,7 @@
     [self refreshFromSettings];
     [client post:@"/matches" options:options callback:^(TTTResponse* resp){
         if ([resp success]) {
-            self.guid = [[resp json] objectForKey:@"guid"];
+            self.pollingGuid = [[resp json] objectForKey:@"guid"];
             timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForMatchUpdates) userInfo:NULL repeats:YES];
             [timer fire];
             callback();
@@ -49,11 +49,11 @@
 - (void) pollForMatchUpdates
 {
     NSMutableString* path = [[NSMutableString alloc] initWithString:@"/matches/"];
-    [path appendString: self.guid];
+    [path appendString: self.pollingGuid];
     [client get:path callback:^(TTTResponse* resp) {
         if([resp success] && (self.opponentNames = [[resp json] objectForKey:@"opponentNames"])) {
             [timer invalidate];
-            self.guid = NULL;
+            self.pollingGuid = NULL;
             timer = NULL;
         }
     }];

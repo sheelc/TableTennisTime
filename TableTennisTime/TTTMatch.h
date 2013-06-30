@@ -12,7 +12,7 @@
 
 @interface TTTMatch : NSObject
 
-@property (strong) NSString* guid;
+@property (strong) NSString* pollingGuid;
 @property (strong) NSString* names;
 @property (strong) NSString* opponentNames;
 @property (strong) NSNumber* numPlayers;

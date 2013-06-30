@@ -30,7 +30,7 @@
     match = [[TTTMatch alloc] initWithSettings:userSettings andRestClient:restClient];
     matchScheduled = [[TTTMatchFoundController alloc] initWithMatch: match];
     
-    [match addObserver:self forKeyPath:@"guid" options:NSKeyValueObservingOptionNew context:NULL];
+    [match addObserver:self forKeyPath:@"pollingGuid" options:NSKeyValueObservingOptionNew context:NULL];
 
     [statusMenu setAutoenablesItems:NO];
     [statusItem setMenu:statusMenu];
@@ -76,9 +76,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if([object isEqualTo: match] && [keyPath isEqualToString:@"guid"]) {
+    if([object isEqualTo: match] && [keyPath isEqualToString:@"pollingGuid"]) {
         NSMenuItem* item = [statusMenu itemWithTag:1];
-        if(match.guid) {
+        if(match.pollingGuid) {
             [item setTitle:@"Awaiting match..."];
             [item setEnabled:NO];
         } else {
