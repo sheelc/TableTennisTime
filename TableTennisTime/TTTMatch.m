@@ -7,11 +7,15 @@
 //
 
 #import "TTTMatch.h"
+#import <Foundation/NSTimer.h>
+
+#define POLLING_INTERVAL (10.0)
 
 @implementation TTTMatch
 {
     NSUserDefaults* settings;
     TTTRestClient* client;
+    NSTimer* timer;
 }
 
 - (id)initWithSettings:(NSUserDefaults*)userSettings andRestClient:(TTTRestClient*)restClient
@@ -26,13 +30,33 @@
     return self;
 }
 
-- (void)createMatchFromOptions:(NSDictionary*)options
+- (void)createMatchFromOptions:(NSDictionary*)options onSuccess: (void (^)(void)) callback
 {
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop){
         [settings setObject:obj forKey:key];
     }];
     [self refreshFromSettings];
-    [client post:@"/matches" options:options callback:^(id resp){}];
+    [client post:@"/matches" options:options callback:^(TTTResponse* resp){
+        if ([resp success]) {
+            self.guid = [[resp json] objectForKey:@"guid"];
+            timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForMatchUpdates) userInfo:NULL repeats:YES];
+            [timer fire];
+            callback();
+        }
+    }];
+}
+
+- (void) pollForMatchUpdates
+{
+    NSMutableString* path = [[NSMutableString alloc] initWithString:@"/matches/"];
+    [path appendString: self.guid];
+    [client get:path callback:^(TTTResponse* resp) {
+        if([resp success] && (self.opponentNames = [[resp json] objectForKey:@"opponentNames"])) {
+            [timer invalidate];
+            self.guid = NULL;
+            timer = NULL;
+        }
+    }];
 }
 
 - (void)refreshFromSettings

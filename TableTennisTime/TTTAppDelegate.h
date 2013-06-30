@@ -17,6 +17,5 @@
 
 - (IBAction)openPreferences:(id)sender;
 - (IBAction)createMatch:(id)sender;
-- (void)applicationWillTerminate:(NSNotification *)aNotification;
 
 @end

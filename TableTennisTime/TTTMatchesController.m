@@ -77,8 +77,9 @@
     
     [options setValue:[[[self.matchType selectedCell] title] lowercaseString] forKey:@"matchType"];
     
-    [match createMatchFromOptions:options];
+  [match createMatchFromOptions:options onSuccess: ^(void) {
     [[self window] close];
+  }];
 }
 
 @end

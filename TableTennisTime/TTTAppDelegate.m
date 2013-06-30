@@ -9,12 +9,14 @@
 #import "TTTAppDelegate.h"
 #import "TTTPreferencesController.h"
 #import "TTTMatchesController.h"
+#import "TTTMatchFoundController.h"
 #import "TTTMatch.h"
 
 @implementation TTTAppDelegate
 {
     TTTPreferencesController* preferences;
     TTTMatchesController* matches;
+    TTTMatchFoundController* matchScheduled;
     TTTRestClient* restClient;
     TTTMatch* match;
     NSUserDefaults* userSettings;
@@ -26,7 +28,11 @@
     userSettings = [[NSUserDefaults alloc] init];
     restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
     match = [[TTTMatch alloc] initWithSettings:userSettings andRestClient:restClient];
+    matchScheduled = [[TTTMatchFoundController alloc] initWithMatch: match];
     
+    [match addObserver:self forKeyPath:@"guid" options:NSKeyValueObservingOptionNew context:NULL];
+
+    [statusMenu setAutoenablesItems:NO];
     [statusItem setMenu:statusMenu];
     [statusItem setTitle:@"TTT"];
     [statusItem setHighlightMode:YES];
@@ -65,6 +71,20 @@
                                                       usingBlock:^(NSNotification *notification) {
                                                           matches = nil;
                                                       }];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if([object isEqualTo: match] && [keyPath isEqualToString:@"guid"]) {
+        NSMenuItem* item = [statusMenu itemWithTag:1];
+        if(match.guid) {
+            [item setTitle:@"Awaiting match..."];
+            [item setEnabled:NO];
+        } else {
+            [item setTitle:@"Request Match!"];
+            [item setEnabled:YES];
+        }
     }
 }
 

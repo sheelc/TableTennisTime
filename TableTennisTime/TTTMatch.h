@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "TTTRestClient.h"
+#import "TTTResponse.h"
 
 @interface TTTMatch : NSObject
 
+@property (strong) NSString* guid;
 @property (strong) NSString* names;
+@property (strong) NSString* opponentNames;
 @property (strong) NSNumber* numPlayers;
 @property (strong) NSString* matchType;
 
 - (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
-- (void)createMatchFromOptions:(NSDictionary*)options;
+- (void)createMatchFromOptions:(NSDictionary*)options onSuccess: (void (^)(void)) callback;
 @end
