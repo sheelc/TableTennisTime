@@ -22,6 +22,8 @@
 		5059D823174B437200F626B9 /* TTTMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5059D822174B437200F626B9 /* TTTMatch.m */; };
 		50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50722E651749FB7C00000C56 /* TTTMatchesController.m */; };
 		50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50722E661749FB7C00000C56 /* TTTMatchesController.xib */; };
+		508257B51780FE0F00562B99 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508257B41780FE0F00562B99 /* icon.iconset */; };
+		508257BB1780FE5400562B99 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508257BA1780FE5400562B99 /* icon.icns */; };
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
 		50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTTPreferencesController.xib */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		50722E641749FB7C00000C56 /* TTTMatchesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatchesController.h; sourceTree = "<group>"; };
 		50722E651749FB7C00000C56 /* TTTMatchesController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = TTTMatchesController.m; sourceTree = "<group>"; tabWidth = 2; };
 		50722E661749FB7C00000C56 /* TTTMatchesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchesController.xib; sourceTree = "<group>"; };
+		508257B41780FE0F00562B99 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		508257BA1780FE5400562B99 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPreferencesController.h; sourceTree = "<group>"; };
 		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPreferencesController.m; sourceTree = "<group>"; };
 		50D66F4917494E000072DA97 /* TTTPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTPreferencesController.xib; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		504945631748517A00280208 = {
 			isa = PBXGroup;
 			children = (
+				508257BA1780FE5400562B99 /* icon.icns */,
 				504945711748517A00280208 /* Frameworks */,
 				5049456F1748517A00280208 /* Products */,
 				5049459B17487CCB00280208 /* Resources */,
@@ -136,6 +141,7 @@
 		5049459B17487CCB00280208 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				508257B41780FE0F00562B99 /* icon.iconset */,
 				5049459D1748803C00280208 /* check.png */,
 				5049459E1748803C00280208 /* cross.png */,
 			);
@@ -232,6 +238,8 @@
 				50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */,
 				50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */,
 				5051BE92177FC03A001A34E3 /* TTTMatchFoundController.xib in Resources */,
+				508257B51780FE0F00562B99 /* icon.iconset in Resources */,
+				508257BB1780FE5400562B99 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
