@@ -52,7 +52,7 @@
     NSMutableString* path = [[NSMutableString alloc] initWithString:@"/matches/"];
     [path appendString: self.pollingGuid];
     [client get:path callback:^(TTTResponse* resp) {
-        if([resp success] && (self.opponentNames = [[resp json] objectForKey:@"opponentNames"])) {
+        if(([resp statusCode] == 404) || ([resp success] && (self.opponentNames = [[resp json] objectForKey:@"opponentNames"]))) {
             [timer invalidate];
             self.pollingGuid = NULL;
             timer = NULL;
@@ -62,7 +62,7 @@
 
 - (void)refreshFromSettings
 {
-    [@[@"names", @"matchType", @"numPlayers"] enumerateObjectsUsingBlock:^(id key, NSUInteger index, BOOL* stop){
+    [@[@"names", @"matchType", @"numPlayers", @"requestTTL"] enumerateObjectsUsingBlock:^(id key, NSUInteger index, BOOL* stop){
         [self setValue:[settings objectForKey:key] forKey:key];
     }];
 }

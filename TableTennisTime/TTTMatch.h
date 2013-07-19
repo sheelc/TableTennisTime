@@ -16,6 +16,7 @@
 @property (strong) NSString* opponentNames;
 @property (strong) NSNumber* numPlayers;
 @property (strong) NSString* matchType;
+@property (strong) NSNumber* requestTTL;
 
 - (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
 - (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback;

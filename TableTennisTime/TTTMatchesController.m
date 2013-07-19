@@ -39,6 +39,9 @@
     if (match.matchType) {
         [self.matchType selectCellAtRow:0 column: [match.matchType isEqualToString:@"singles"] ? 0 : 1];
     }
+    if (match.requestTTL) {
+      [self.requestTTL setStringValue:[match.requestTTL stringValue]];
+    }
 
     [self toggleSinglesOption];
     [self.errorMessage setHidden:YES];
@@ -64,14 +67,21 @@
 - (IBAction)createMatch:(id)sender
 {
     if(![[self.playerNames stringValue] length]) {
-        [self.playerNames setBackgroundColor:[NSColor redColor]];
-        [self.playerNames setTextColor:[NSColor whiteColor]];
-        [placeholder setAttributes:@{NSForegroundColorAttributeName: [NSColor whiteColor]} range:NSMakeRange(0,[placeholder length])];
-        [[self.playerNames cell] setPlaceholderAttributedString:placeholder];
+        [self.errorMessage setStringValue:@"Player names are required"];
+        [self.errorMessage setHidden:NO];
         return;
     }
-    
+
+    NSInteger ttl = [self.requestTTL integerValue];
+    if(ttl < 1 || ttl > 540) {
+      [self.errorMessage setStringValue:@"Request time to live should be between 1 and 540"];
+      [self.errorMessage setHidden:NO];
+      return;
+    }
+
+    [self.errorMessage setHidden:YES];
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
+    [options setValue:[NSNumber numberWithInteger:ttl] forKey:@"requestTTL"];
     [options setValue:[self.playerNames stringValue] forKey:@"names"];
     
     int playerCount = (int) [self.numPlayers selectedColumn] + 1;
@@ -83,6 +93,7 @@
     if(success) {
       [[self window] close];
     } else {
+      [self.errorMessage setStringValue:@"There was a problem creating the match. Please try again later"];
       [self.errorMessage setHidden:NO];
     }
   }];

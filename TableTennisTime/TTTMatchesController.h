@@ -13,7 +13,9 @@
 @property (weak) IBOutlet NSTextField *playerNames;
 @property (weak) IBOutlet NSMatrix *numPlayers;
 @property (weak) IBOutlet NSMatrix *matchType;
+@property (weak) IBOutlet NSTextField *requestTTL;
 @property (weak) IBOutlet NSTextField *errorMessage;
+
 
 - (id)initWithMatch:(TTTMatch*)match;
 - (IBAction)numPlayersChanged:(id)sender;

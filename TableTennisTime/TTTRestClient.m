@@ -78,7 +78,7 @@
      sendAsynchronousRequest:theRequest
      queue: [NSOperationQueue mainQueue]
      completionHandler:^(NSURLResponse* response, NSData* data, NSError* error){
-         callback([[TTTResponse alloc] initFromData:data error:error]);
+         callback([[TTTResponse alloc] initFromResponse:response data:data error:error]);
      }
     ];
 }
