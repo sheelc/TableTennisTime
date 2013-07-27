@@ -127,14 +127,6 @@
 					</object>
 					<int key="connectionID">554</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">createMatch</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="621514451"/>
-					</object>
-					<int key="connectionID">556</int>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
