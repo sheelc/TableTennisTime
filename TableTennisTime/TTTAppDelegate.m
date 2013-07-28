@@ -7,85 +7,18 @@
 //
 
 #import "TTTAppDelegate.h"
-#import "TTTPreferencesController.h"
-#import "TTTMatchesController.h"
-#import "TTTMatchFoundController.h"
-#import "TTTMatch.h"
+#import "TTTStatusMenuController.h"
 
 @implementation TTTAppDelegate
 {
-    TTTPreferencesController* preferences;
-    TTTMatchesController* matches;
-    TTTMatchFoundController* matchScheduled;
-    TTTRestClient* restClient;
-    TTTMatch* match;
     NSUserDefaults* userSettings;
+    TTTStatusMenuController* statusMenuController;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     userSettings = [[NSUserDefaults alloc] init];
-    restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
-    match = [[TTTMatch alloc] initWithSettings:userSettings andRestClient:restClient];
-    matchScheduled = [[TTTMatchFoundController alloc] initWithMatch: match];
-    
-    [match addObserver:self forKeyPath:@"pollingGuid" options:NSKeyValueObservingOptionNew context:NULL];
-
-    [statusMenu setAutoenablesItems:NO];
-    [statusItem setMenu:statusMenu];
-    [statusItem setTitle:@"TTT"];
-    [statusItem setHighlightMode:YES];
-    
-    [restClient targetValid:^(BOOL valid){
-        if(!valid) {
-            [self openPreferences:self];
-        }
-    }];
-}
-
-- (IBAction)openPreferences:(id)sender
-{
-    if(!preferences) {
-        preferences = [[TTTPreferencesController alloc] initWithRestClient: restClient];
-        [[preferences window] setLevel: NSPopUpMenuWindowLevel];
-        [preferences showWindow:self];
-        [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
-                                                          object:[preferences window]
-                                                           queue:nil
-                                                      usingBlock:^(NSNotification *notification) {
-                                                          preferences = nil;
-                                                      }];        
-    }
-}
-
-- (IBAction)createMatch:(id)sender
-{
-    if(!matches) {
-        matches = [[TTTMatchesController alloc] initWithMatch: match];
-        [[matches window] setLevel: NSPopUpMenuWindowLevel];
-        [matches showWindow:self];
-        [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
-                                                          object:[matches window]
-                                                           queue:nil
-                                                      usingBlock:^(NSNotification *notification) {
-                                                          matches = nil;
-                                                      }];
-    }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if([object isEqualTo: match] && [keyPath isEqualToString:@"pollingGuid"]) {
-        NSMenuItem* item = [statusMenu itemWithTag:1];
-        if(match.pollingGuid) {
-            [item setTitle:@"Awaiting match..."];
-            [item setEnabled:NO];
-        } else {
-            [item setTitle:@"Request Match!"];
-            [item setEnabled:YES];
-        }
-    }
+    statusMenuController = [[TTTStatusMenuController alloc] initWithUserSettings:userSettings];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

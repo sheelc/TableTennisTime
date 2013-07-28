@@ -12,7 +12,6 @@
 		5049457F1748517A00280208 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5049457E1748517A00280208 /* main.m */; };
 		504945831748517A00280208 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 504945811748517A00280208 /* Credits.rtf */; };
 		504945861748517A00280208 /* TTTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945851748517A00280208 /* TTTAppDelegate.m */; };
-		504945891748517B00280208 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 504945871748517B00280208 /* MainMenu.xib */; };
 		5049459F1748803C00280208 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459D1748803C00280208 /* check.png */; };
 		504945A01748803C00280208 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 5049459E1748803C00280208 /* cross.png */; };
 		504945A4174897E100280208 /* TTTRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945A3174897E100280208 /* TTTRestClient.m */; };
@@ -24,6 +23,8 @@
 		50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50722E661749FB7C00000C56 /* TTTMatchesController.xib */; };
 		508257B51780FE0F00562B99 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508257B41780FE0F00562B99 /* icon.iconset */; };
 		508257BB1780FE5400562B99 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508257BA1780FE5400562B99 /* icon.icns */; };
+		50BDB61817A484BB005C8CD4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BDB61717A484BB005C8CD4 /* MainMenu.xib */; };
+		50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */; };
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
 		50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTTPreferencesController.xib */; };
 /* End PBXBuildFile section */
@@ -41,7 +42,6 @@
 		504945821748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		504945841748517A00280208 /* TTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTAppDelegate.h; sourceTree = "<group>"; };
 		504945851748517A00280208 /* TTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTAppDelegate.m; sourceTree = "<group>"; };
-		504945881748517B00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5049459D1748803C00280208 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		5049459E1748803C00280208 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		504945A2174897E100280208 /* TTTRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTRestClient.h; sourceTree = "<group>"; };
@@ -58,6 +58,9 @@
 		50722E661749FB7C00000C56 /* TTTMatchesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchesController.xib; sourceTree = "<group>"; };
 		508257B41780FE0F00562B99 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		508257BA1780FE5400562B99 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		50BDB61717A484BB005C8CD4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		50BDB61A17A48ACB005C8CD4 /* TTTStatusMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStatusMenuController.h; sourceTree = "<group>"; };
+		50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStatusMenuController.m; sourceTree = "<group>"; };
 		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPreferencesController.h; sourceTree = "<group>"; };
 		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPreferencesController.m; sourceTree = "<group>"; };
 		50D66F4917494E000072DA97 /* TTTPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTPreferencesController.xib; sourceTree = "<group>"; };
@@ -120,7 +123,7 @@
 				504945A1174897B000280208 /* Models */,
 				504945841748517A00280208 /* TTTAppDelegate.h */,
 				504945851748517A00280208 /* TTTAppDelegate.m */,
-				504945871748517B00280208 /* MainMenu.xib */,
+				50BDB61717A484BB005C8CD4 /* MainMenu.xib */,
 				504945791748517A00280208 /* Supporting Files */,
 			);
 			path = TableTennisTime;
@@ -174,6 +177,8 @@
 				5051BE8E177FC03A001A34E3 /* TTTMatchFoundController.h */,
 				5051BE8F177FC03A001A34E3 /* TTTMatchFoundController.m */,
 				5051BE90177FC03A001A34E3 /* TTTMatchFoundController.xib */,
+				50BDB61A17A48ACB005C8CD4 /* TTTStatusMenuController.h */,
+				50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -232,7 +237,6 @@
 			files = (
 				5049457D1748517A00280208 /* InfoPlist.strings in Resources */,
 				504945831748517A00280208 /* Credits.rtf in Resources */,
-				504945891748517B00280208 /* MainMenu.xib in Resources */,
 				5049459F1748803C00280208 /* check.png in Resources */,
 				504945A01748803C00280208 /* cross.png in Resources */,
 				50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */,
@@ -240,6 +244,7 @@
 				5051BE92177FC03A001A34E3 /* TTTMatchFoundController.xib in Resources */,
 				508257B51780FE0F00562B99 /* icon.iconset in Resources */,
 				508257BB1780FE5400562B99 /* icon.icns in Resources */,
+				50BDB61817A484BB005C8CD4 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +263,7 @@
 				50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */,
 				5059D823174B437200F626B9 /* TTTMatch.m in Sources */,
 				5051BE91177FC03A001A34E3 /* TTTMatchFoundController.m in Sources */,
+				50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,14 +284,6 @@
 				504945821748517A00280208 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		504945871748517B00280208 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				504945881748517B00280208 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -7,15 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TTTRestClient.h"
 
 @interface TTTAppDelegate : NSObject <NSApplicationDelegate>
-{
-    IBOutlet NSMenu* statusMenu;
-    NSStatusItem* statusItem;
-}
-
-- (IBAction)openPreferences:(id)sender;
-- (IBAction)createMatch:(id)sender;
 
 @end
