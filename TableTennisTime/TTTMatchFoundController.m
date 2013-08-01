@@ -28,7 +28,22 @@ static NSString *kMatchFoundKey = @"scheduledMatchData";
 - (void) windowDidLoad
 {
     [super windowDidLoad];
+    [self setWindowFields];
+}
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([object isEqualTo:match] && [keyPath isEqualToString:kMatchFoundKey]) {
+        if ([change objectForKey:@"new"] != (id)[NSNull null]) {
+            [self setWindowFields];
+            [[self window] setLevel: NSPopUpMenuWindowLevel];
+            [self showWindow:self];
+        }
+    }
+}
+
+- (void)setWindowFields
+{
     NSDictionary *attributes = @{NSForegroundColorAttributeName: [NSColor blueColor]};
     NSMutableAttributedString *matchCreated = [[NSMutableAttributedString alloc] initWithString:@"Your match is scheduled! Go to the "];
     [matchCreated appendAttributedString:[[NSAttributedString alloc] initWithString:match.assignedTable attributes:attributes]];
@@ -36,16 +51,6 @@ static NSString *kMatchFoundKey = @"scheduledMatchData";
     [matchCreated appendAttributedString:[[NSAttributedString alloc] initWithString:match.opponentNames attributes:attributes]];
 
     [self.matchCreatedField setAttributedStringValue:matchCreated];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([object isEqualTo:match] && [keyPath isEqualToString:kMatchFoundKey]) {
-        if ([change objectForKey:@"new"] != (id)[NSNull null]) {
-            [[self window] setLevel: NSPopUpMenuWindowLevel];
-            [self showWindow:self];
-        }
-    }
 }
 
 @end
