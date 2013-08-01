@@ -31,6 +31,14 @@
     return self;
 }
 
+- (NSString *)opponentNames {
+    return self.scheduledMatchData[@"opponentNames"];
+}
+
+- (NSString*)assignedTable {
+    return self.scheduledMatchData[@"assignedTable"];
+}
+
 - (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback
 {
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop){
@@ -52,7 +60,8 @@
     NSMutableString* path = [[NSMutableString alloc] initWithString:@"/matches/"];
     [path appendString: self.pollingGuid];
     [client get:path callback:^(TTTResponse* resp) {
-        if(([resp statusCode] == 404) || ([resp success] && (self.opponentNames = [[resp json] objectForKey:@"opponentNames"]))) {
+        if(([resp statusCode] == 404) || [resp success]) {
+            self.scheduledMatchData = [resp json];
             [timer invalidate];
             self.pollingGuid = NULL;
             timer = NULL;

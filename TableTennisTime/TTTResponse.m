@@ -35,7 +35,7 @@
     NSError* jsonParseErrors;
     id json;
     json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParseErrors];
-    return !jsonParseErrors && [json isKindOfClass:[NSDictionary class]];
+    return self.statusCode >= 200 && self.statusCode < 300 && !jsonParseErrors && [json isKindOfClass:[NSDictionary class]];
 }
 
 - (NSInteger) statusCode

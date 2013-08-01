@@ -11,7 +11,7 @@
 
 @interface TTTMatchFoundController : NSWindowController
 
-@property (weak) IBOutlet NSTextField *displayedOpponentNames;
+@property (weak) IBOutlet NSTextField *matchCreatedField;
 
 - (id)initWithMatch:(TTTMatch*)match;
 

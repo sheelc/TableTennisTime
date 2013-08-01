@@ -13,11 +13,14 @@
 
 @property (strong) NSString* pollingGuid;
 @property (strong) NSString* names;
-@property (strong) NSString* opponentNames;
+@property (strong) NSDictionary* scheduledMatchData;
 @property (strong) NSNumber* numPlayers;
 @property (strong) NSString* matchType;
 @property (strong) NSNumber* requestTTL;
 
 - (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
 - (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback;
+- (NSString *)opponentNames;
+- (NSString *)assignedTable;
+
 @end
