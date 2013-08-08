@@ -31,19 +31,12 @@
     return self;
 }
 
-- (NSString *)opponentNames {
-    return self.scheduledMatchData[@"opponentNames"];
-}
-
-- (NSString*)assignedTable {
-    return self.scheduledMatchData[@"assignedTable"];
-}
-
 - (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback
 {
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop){
         [settings setObject:obj forKey:key];
     }];
+    self.matchRequestDate = [NSDate date];
     [self refreshFromSettings];
     [client post:@"/matches" options:options callback:^(TTTResponse* resp){
         if ([resp success]) {
@@ -53,6 +46,18 @@
         }
         callback([resp success]);
     }];
+}
+
+- (NSString *)opponentNames {
+    return self.scheduledMatchData[@"opponentNames"];
+}
+
+- (NSString*)assignedTable {
+    return self.scheduledMatchData[@"assignedTable"];
+}
+
+- (NSTimeInterval)timeLeftInRequest {
+    return fmaxf([[NSDate dateWithTimeInterval:[self.requestTTL doubleValue] * 60 sinceDate:self.matchRequestDate] timeIntervalSinceNow], 0);
 }
 
 - (void) pollForMatchUpdates

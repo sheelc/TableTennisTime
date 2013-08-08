@@ -17,10 +17,12 @@
 @property (strong) NSNumber* numPlayers;
 @property (strong) NSString* matchType;
 @property (strong) NSNumber* requestTTL;
+@property (strong) NSDate* matchRequestDate;
 
 - (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
 - (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback;
 - (NSString *)opponentNames;
 - (NSString *)assignedTable;
+- (NSTimeInterval)timeLeftInRequest;
 
 @end

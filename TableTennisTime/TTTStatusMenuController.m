@@ -12,13 +12,16 @@
 #import "TTTMatchFoundController.h"
 #import "TTTMatch.h"
 #import "TTTRestClient.h"
+#import "TTTStatusMenuDelegate.h"
 
-static NSString* kRequestMatchTitle = @"Request a Match!";
-static int kRequestMatchTag = 1;
+NSString* kRequestMatchTitle = @"Request a Match!";
+int kRequestMatchTag = 1;
+int kTimeRemainingTag = 2;
 
 @implementation TTTStatusMenuController
 {
-    NSMenu *statusMenu;
+    NSMenu* statusMenu;
+    id<NSMenuDelegate> menuDelegate;
     NSStatusItem* statusItem;
     TTTRestClient* restClient;
     TTTMatch* match;
@@ -38,8 +41,6 @@ static int kRequestMatchTag = 1;
         
         statusMenu = self.createStatusMenu;
         statusItem = self.createStatusItem;
-        
-        [match addObserver:self forKeyPath:@"pollingGuid" options:NSKeyValueObservingOptionNew context:NULL];
         
         [restClient targetValid:^(BOOL valid){
             if(!valid) {
@@ -62,12 +63,21 @@ static int kRequestMatchTag = 1;
     menuItem = [menu addItemWithTitle:kRequestMatchTitle action:@selector(createMatch:) keyEquivalent:@""];
     menuItem.tag = kRequestMatchTag;
     menuItem.target = self;
-    
+
+    menuItem = [menu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+    menuItem.tag = kTimeRemainingTag;
+    menuItem.enabled = NO;
+    menuItem.indentationLevel = 1;
+    menuItem.hidden = YES;
+
     [menu addItem:[NSMenuItem separatorItem]];
     
     menuItem = [menu addItemWithTitle:@"Quit" action:@selector(closeApplication:) keyEquivalent:@""];
     menuItem.target = self;
-    
+
+    menuDelegate = [[TTTStatusMenuDelegate alloc] initWithMatch:match];
+    menu.delegate = menuDelegate;
+
     return menu;
 }
 
@@ -113,20 +123,6 @@ static int kRequestMatchTag = 1;
 
 - (void)closeApplication:(id)sender {
     [NSApp terminate:self];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if([object isEqualTo: match] && [keyPath isEqualToString:@"pollingGuid"]) {
-        NSMenuItem* item = [statusMenu itemWithTag:kRequestMatchTag];
-        if(match.pollingGuid) {
-            [item setTitle:@"Awaiting match..."];
-            [item setEnabled:NO];
-        } else {
-            [item setTitle:kRequestMatchTitle];
-            [item setEnabled:YES];
-        }
-    }
 }
 
 @end

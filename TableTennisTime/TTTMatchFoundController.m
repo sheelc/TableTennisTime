@@ -34,7 +34,7 @@ static NSString *kMatchFoundKey = @"scheduledMatchData";
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([object isEqualTo:match] && [keyPath isEqualToString:kMatchFoundKey]) {
-        if ([change objectForKey:@"new"] != (id)[NSNull null]) {
+        if ([[change objectForKey:NSKeyValueChangeNewKey] count]) {
             [self setWindowFields];
             [[self window] setLevel: NSPopUpMenuWindowLevel];
             [self showWindow:self];

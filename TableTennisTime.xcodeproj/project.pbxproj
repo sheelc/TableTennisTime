@@ -27,6 +27,7 @@
 		50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */; };
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
 		50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTTPreferencesController.xib */; };
+		50E95F7317B35CB500D9126F /* TTTStatusMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPreferencesController.h; sourceTree = "<group>"; };
 		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPreferencesController.m; sourceTree = "<group>"; };
 		50D66F4917494E000072DA97 /* TTTPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTPreferencesController.xib; sourceTree = "<group>"; };
+		50E95F7117B35CB500D9126F /* TTTStatusMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStatusMenuDelegate.h; sourceTree = "<group>"; };
+		50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStatusMenuDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				5051BE90177FC03A001A34E3 /* TTTMatchFoundController.xib */,
 				50BDB61A17A48ACB005C8CD4 /* TTTStatusMenuController.h */,
 				50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */,
+				50E95F7117B35CB500D9126F /* TTTStatusMenuDelegate.h */,
+				50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				5059D823174B437200F626B9 /* TTTMatch.m in Sources */,
 				5051BE91177FC03A001A34E3 /* TTTMatchFoundController.m in Sources */,
 				50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */,
+				50E95F7317B35CB500D9126F /* TTTStatusMenuDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
