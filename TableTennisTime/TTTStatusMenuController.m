@@ -20,7 +20,7 @@ int kTimeRemainingTag = 2;
 
 @implementation TTTStatusMenuController
 {
-    NSMenu* statusMenu;
+    NSMenu *statusMenu;
     id<NSMenuDelegate> menuDelegate;
     NSStatusItem* statusItem;
     TTTRestClient* restClient;
@@ -56,7 +56,7 @@ int kTimeRemainingTag = 2;
     NSMenu* menu = [[NSMenu alloc] init];
     menu.autoenablesItems = NO;
 
-    NSMenuItem* menuItem;
+    NSMenuItem *menuItem;
     menuItem = [menu addItemWithTitle:@"Preferences" action:@selector(openPreferences:) keyEquivalent:@""];
     menuItem.target = self;
     

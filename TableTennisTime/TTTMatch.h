@@ -11,16 +11,16 @@
 
 @interface TTTMatch : NSObject
 
-@property (strong) NSString* pollingGuid;
-@property (strong) NSString* names;
-@property (strong) NSDictionary* scheduledMatchData;
-@property (strong) NSNumber* numPlayers;
-@property (strong) NSString* matchType;
-@property (strong) NSNumber* requestTTL;
-@property (strong) NSDate* matchRequestDate;
+@property (strong) NSString *pollingGuid;
+@property (strong) NSString *names;
+@property (strong) NSDictionary *scheduledMatchData;
+@property (strong) NSNumber *numPlayers;
+@property (strong) NSString *matchType;
+@property (strong) NSNumber *requestTTL;
+@property (strong) NSDate *matchRequestDate;
 
-- (id)initWithSettings:(NSUserDefaults*)settings andRestClient:(TTTRestClient*)client;
-- (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback;
+- (id)initWithSettings:(NSUserDefaults *)settings andRestClient:(TTTRestClient *)client;
+- (void)createMatchFromOptions:(NSDictionary *)options onComplete: (void (^)(BOOL)) callback;
 - (NSString *)opponentNames;
 - (NSString *)assignedTable;
 - (NSTimeInterval)timeLeftInRequest;

@@ -17,7 +17,7 @@
 @property (weak) IBOutlet NSTextField *errorMessage;
 
 
-- (id)initWithMatch:(TTTMatch*)match;
+- (id)initWithMatch:(TTTMatch *)match;
 - (IBAction)numPlayersChanged:(id)sender;
 - (IBAction)createMatch:(id)sender;
 @end

@@ -14,7 +14,7 @@
 @property (weak) IBOutlet NSTextField *serverUrl;
 @property (weak) IBOutlet NSImageView *status;
 
-- (id) initWithRestClient: (TTTRestClient*) client;
+- (id)initWithRestClient: (TTTRestClient *)client;
 - (void)controlTextDidChange:(NSNotification *)notification;
 
 @end

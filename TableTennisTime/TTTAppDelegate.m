@@ -11,8 +11,8 @@
 
 @implementation TTTAppDelegate
 {
-    NSUserDefaults* userSettings;
-    TTTStatusMenuController* statusMenuController;
+    NSUserDefaults *userSettings;
+    TTTStatusMenuController *statusMenuController;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

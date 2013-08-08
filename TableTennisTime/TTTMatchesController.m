@@ -10,11 +10,11 @@
 
 @implementation TTTMatchesController
 {
-    TTTMatch* match;
-    NSMutableAttributedString* placeholder;
+    TTTMatch *match;
+    NSMutableAttributedString *placeholder;
 }
 
-- (id)initWithMatch:(TTTMatch*)selectedMatch
+- (id)initWithMatch:(TTTMatch *)selectedMatch
 {
     self = [super initWithWindowNibName:@"TTTMatchesController"];
     if (self) {

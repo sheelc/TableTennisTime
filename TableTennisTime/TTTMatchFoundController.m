@@ -12,10 +12,10 @@ static NSString *kMatchFoundKey = @"scheduledMatchData";
 
 @implementation TTTMatchFoundController
 {
-    TTTMatch* match;
+    TTTMatch *match;
 }
 
-- (id)initWithMatch:(TTTMatch*)selectedMatch
+- (id)initWithMatch:(TTTMatch *)selectedMatch
 {
     self = [super initWithWindowNibName:@"TTTMatchFoundController"];
     if (self) {

@@ -38,7 +38,7 @@ extern int kTimeRemainingTag;
         awaitingMatchItem.enabled = NO;
 
         timeRemainingForMatchItem.hidden = NO;
-        NSString* remainingTime = [NSString stringWithFormat:@"%d", ((int) match.timeLeftInRequest / 60) + 1];
+        NSString *remainingTime = [NSString stringWithFormat:@"%d", ((int) match.timeLeftInRequest / 60) + 1];
         timeRemainingForMatchItem.title = [[@"Request alive for ~" stringByAppendingString:remainingTime] stringByAppendingString:@" more min(s)"];
     } else {
         awaitingMatchItem.title = kRequestMatchTitle;

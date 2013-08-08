@@ -12,10 +12,10 @@
 
 @property (strong) NSString *target;
 
-- (id)initWithSettings: (NSUserDefaults*) userSettings;
-- (void)updateTarget:(NSString*)target;
+- (id)initWithSettings:(NSUserDefaults *)userSettings;
+- (void)updateTarget:(NSString *)target;
 - (void)targetValid:(void ( ^ )(BOOL))callback;
-- (void)get:(NSString*)path callback:(void ( ^ )(id)) callback;
-- (void)post:(NSString*)path options:(NSDictionary*)body callback:(void ( ^ )(id)) callback;
+- (void)get:(NSString *)path callback:(void ( ^ )(id)) callback;
+- (void)post:(NSString *)path options:(NSDictionary*)body callback:(void ( ^ )(id)) callback;
 
 @end

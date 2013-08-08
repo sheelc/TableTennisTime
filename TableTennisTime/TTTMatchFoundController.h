@@ -13,6 +13,6 @@
 
 @property (weak) IBOutlet NSTextField *matchCreatedField;
 
-- (id)initWithMatch:(TTTMatch*)match;
+- (id)initWithMatch:(TTTMatch *)match;
 
 @end

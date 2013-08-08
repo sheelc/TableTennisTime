@@ -10,12 +10,12 @@
 
 @implementation TTTResponse
 {
-    NSHTTPURLResponse* response;
-    NSData* data;
-    NSError* error;
+    NSHTTPURLResponse *response;
+    NSData *data;
+    NSError *error;
 }
 
-- (id) initFromResponse:(NSURLResponse*)newResponse data:(NSData *)newData error:(NSError*) newError
+- (id)initFromResponse:(NSURLResponse *)newResponse data:(NSData *)newData error:(NSError *)newError
 {
     self = [super init];
     if (self) {
@@ -26,26 +26,26 @@
     return self;
 }
 
-- (BOOL) success
+- (BOOL)success
 {
     if(error) {
         return false;
     }
     
-    NSError* jsonParseErrors;
+    NSError *jsonParseErrors;
     id json;
     json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParseErrors];
     return self.statusCode >= 200 && self.statusCode < 300 && !jsonParseErrors && [json isKindOfClass:[NSDictionary class]];
 }
 
-- (NSInteger) statusCode
+- (NSInteger)statusCode
 {
     return [response statusCode];
 }
 
-- (NSDictionary*) json
+- (NSDictionary *)json
 {
-    NSError* jsonParseErrors;
+    NSError *jsonParseErrors;
     return ((NSDictionary*) [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParseErrors]);
 }
 

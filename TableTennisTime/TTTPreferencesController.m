@@ -12,20 +12,20 @@ typedef void(^ImageTogglerBlock)(BOOL);
 
 @implementation TTTPreferencesController
 {
-    TTTRestClient* client;
+    TTTRestClient *client;
     ImageTogglerBlock imageToggler;
 }
 
-- (id) initWithRestClient:(TTTRestClient *)restClient
+- (id)initWithRestClient:(TTTRestClient *)restClient
 {
     self = [super initWithWindowNibName:@"TTTPreferencesController" owner:self];
     if (self){
         client = restClient;
         imageToggler = ^(BOOL valid){
             if(valid){
-                _status.image = [NSImage imageNamed: @"check.png"];
+                self.status.image = [NSImage imageNamed: @"check.png"];
             } else {
-                _status.image = [NSImage imageNamed: @"cross.png"];
+                self.status.image = [NSImage imageNamed: @"cross.png"];
             }
         };
     }
@@ -33,7 +33,7 @@ typedef void(^ImageTogglerBlock)(BOOL);
     return self;
 }
 
-- (void) windowDidLoad
+- (void)windowDidLoad
 {
     [super windowDidLoad];
     if(client.target){

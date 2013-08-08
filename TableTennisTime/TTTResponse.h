@@ -10,9 +10,9 @@
 
 @interface TTTResponse : NSObject
 
-- (id) initFromResponse:(NSURLResponse*)newResponse data:(NSData *)newData error:(NSError*) newError;
-- (BOOL) success;
-- (NSInteger) statusCode;
-- (NSDictionary*) json;
+- (id)initFromResponse:(NSURLResponse *)newResponse data:(NSData *)newData error:(NSError *)newError;
+- (BOOL)success;
+- (NSInteger)statusCode;
+- (NSDictionary *)json;
 
 @end

@@ -19,7 +19,7 @@
     NSTimer* timer;
 }
 
-- (id)initWithSettings:(NSUserDefaults*)userSettings andRestClient:(TTTRestClient*)restClient
+- (id)initWithSettings:(NSUserDefaults *)userSettings andRestClient:(TTTRestClient *)restClient
 {
     self = [super init];
     if (self) {
@@ -31,9 +31,9 @@
     return self;
 }
 
-- (void)createMatchFromOptions:(NSDictionary*)options onComplete: (void (^)(BOOL)) callback
+- (void)createMatchFromOptions:(NSDictionary *)options onComplete: (void (^)(BOOL)) callback
 {
-    [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop){
+    [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
         [settings setObject:obj forKey:key];
     }];
     self.matchRequestDate = [NSDate date];
@@ -52,7 +52,7 @@
     return self.scheduledMatchData[@"opponentNames"];
 }
 
-- (NSString*)assignedTable {
+- (NSString *)assignedTable {
     return self.scheduledMatchData[@"assignedTable"];
 }
 
@@ -62,9 +62,9 @@
 
 - (void) pollForMatchUpdates
 {
-    NSMutableString* path = [[NSMutableString alloc] initWithString:@"/matches/"];
+    NSMutableString *path = [[NSMutableString alloc] initWithString:@"/matches/"];
     [path appendString: self.pollingGuid];
-    [client get:path callback:^(TTTResponse* resp) {
+    [client get:path callback:^(TTTResponse *resp) {
         if(([resp statusCode] == 404) || [resp success]) {
             self.scheduledMatchData = [resp json];
             [timer invalidate];
@@ -76,7 +76,7 @@
 
 - (void)refreshFromSettings
 {
-    [@[@"names", @"matchType", @"numPlayers", @"requestTTL"] enumerateObjectsUsingBlock:^(id key, NSUInteger index, BOOL* stop){
+    [@[@"names", @"matchType", @"numPlayers", @"requestTTL"] enumerateObjectsUsingBlock:^(id key, NSUInteger index, BOOL *stop){
         [self setValue:[settings objectForKey:key] forKey:key];
     }];
 }
