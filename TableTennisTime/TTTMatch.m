@@ -32,6 +32,7 @@
 
 - (void)beginPollingForConfirmationWithJSON:(NSDictionary *)json
 {
+    self.matchFound = NO;
     confirmationPollingGuid = [json objectForKey:@"scheduledMatchGuid"];
     timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForConfirmation) userInfo:NULL repeats:YES];
     [timer fire];

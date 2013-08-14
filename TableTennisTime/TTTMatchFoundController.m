@@ -29,6 +29,17 @@ static NSString *kMatchConfirmationTimeRemainingKey = @"timeRemaining";
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSCenterTextAlignment;
+    NSDictionary *stringAttributes = @{NSForegroundColorAttributeName: [NSColor whiteColor],
+                                       NSFontAttributeName: [NSFont fontWithName:@"Helvetica-Bold" size:13.0],
+                                       NSParagraphStyleAttributeName: paragraphStyle};
+
+    self.acceptButton.attributedTitle = [[NSAttributedString alloc] initWithString:self.acceptButton.title
+                                                                        attributes: stringAttributes];
+    self.rejectButton.attributedTitle = [[NSAttributedString alloc] initWithString:self.rejectButton.title
+                                                                        attributes: stringAttributes];
+
     [self setWindowFields];
 }
 
@@ -46,12 +57,18 @@ static NSString *kMatchConfirmationTimeRemainingKey = @"timeRemaining";
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    [self setWindowFields];
-    if ([keyPath isEqualToString:kMatchFoundKey]) {
+    if ([keyPath isEqualToString:kMatchFoundKey] && [change[NSKeyValueChangeNewKey] boolValue]) {
+        self.acceptButton.hidden = NO;
+        self.rejectButton.hidden = NO;
+        self.closeButton.hidden = YES;
+
+        [self setWindowFields];
         [[self window] setLevel: NSPopUpMenuWindowLevel];
         [self showWindow:self];
 
         [match addObserver:self forKeyPath:kMatchConfirmationTimeRemainingKey options:NSKeyValueObservingOptionNew context:NULL];
+    } else if([keyPath isEqualToString:kMatchConfirmationTimeRemainingKey]) {
+        [self setWindowFields];
     }
 }
 
