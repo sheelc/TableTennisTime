@@ -1,24 +1,24 @@
 //
-//  TTTMatchesController.m
+//  TTTMatchRequestController.m
 //  TableTennisTime
 //
 //  Created by Sheel Choksi on 5/19/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
-#import "TTTMatchesController.h"
+#import "TTTMatchRequestController.h"
 
-@implementation TTTMatchesController
+@implementation TTTMatchRequestController
 {
-    TTTMatch *match;
+    TTTMatchRequest *matchRequest;
     NSMutableAttributedString *placeholder;
 }
 
-- (id)initWithMatch:(TTTMatch *)selectedMatch
+- (id)initWithMatchRequest:(TTTMatchRequest *)givenMatchRequest
 {
-    self = [super initWithWindowNibName:@"TTTMatchesController"];
+    self = [super initWithWindowNibName:@"TTTMatchRequestController"];
     if (self) {
-        match = selectedMatch;
+        matchRequest = givenMatchRequest;
         placeholder = [[NSMutableAttributedString alloc] initWithString:@"Jack & Jill (Required)" attributes:@{NSForegroundColorAttributeName: [NSColor grayColor]}];
     }
 
@@ -30,17 +30,17 @@
     [super windowDidLoad];
 
     [[self.playerNames cell] setPlaceholderAttributedString:placeholder];
-    if(match.names) {
-        [self.playerNames setStringValue:match.names];
+    if(matchRequest.names) {
+        [self.playerNames setStringValue:matchRequest.names];
     }
-    if (match.numPlayers) {
-        [self.numPlayers selectCellAtRow:0 column:[match.numPlayers intValue] - 1];
+    if (matchRequest.numPlayers) {
+        [self.numPlayers selectCellAtRow:0 column:[matchRequest.numPlayers intValue] - 1];
     }
-    if (match.matchType) {
-        [self.matchType selectCellAtRow:0 column: [match.matchType isEqualToString:@"singles"] ? 0 : 1];
+    if (matchRequest.matchType) {
+        [self.matchType selectCellAtRow:0 column: [matchRequest.matchType isEqualToString:@"singles"] ? 0 : 1];
     }
-    if (match.requestTTL) {
-      [self.requestTTL setStringValue:[match.requestTTL stringValue]];
+    if (matchRequest.requestTTL) {
+      [self.requestTTL setStringValue:[matchRequest.requestTTL stringValue]];
     }
 
     [self toggleSinglesOption];
@@ -89,7 +89,7 @@
     
     [options setValue:[[[self.matchType selectedCell] title] lowercaseString] forKey:@"matchType"];
     
-  [match createMatchFromOptions:options onComplete: ^(BOOL success) {
+  [matchRequest createMatchFromOptions:options onComplete: ^(BOOL success) {
     if(success) {
       [[self window] close];
     } else {

@@ -2,27 +2,27 @@
 //  TTTMatch.h
 //  TableTennisTime
 //
-//  Created by Sheel Choksi on 5/20/13.
+//  Created by Sheel Choksi on 8/11/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "TTTRestClient.h"
+
+@class TTTRestClient;
 
 @interface TTTMatch : NSObject
 
-@property (strong) NSString *pollingGuid;
-@property (strong) NSString *names;
-@property (strong) NSDictionary *scheduledMatchData;
-@property (strong) NSNumber *numPlayers;
-@property (strong) NSString *matchType;
-@property (strong) NSNumber *requestTTL;
-@property (strong) NSDate *matchRequestDate;
+@property (strong) NSString *matchRequestGuid;
+@property (strong) NSString *assignedTable;
+@property (strong) NSArray *teams;
+@property (strong) NSNumber *timeRemaining;
 
-- (id)initWithSettings:(NSUserDefaults *)settings andRestClient:(TTTRestClient *)client;
-- (void)createMatchFromOptions:(NSDictionary *)options onComplete: (void (^)(BOOL)) callback;
-- (NSString *)opponentNames;
-- (NSString *)assignedTable;
-- (NSTimeInterval)timeLeftInRequest;
+@property (assign) NSInteger scheduled;
+@property (assign) BOOL matchFound;
+
+- (id)initWithRestClient:(TTTRestClient *)restClient;
+- (void)beginPollingForConfirmationWithJSON:(NSDictionary *)json;
+- (void)acceptMatch;
+- (void)rejectMatch;
 
 @end

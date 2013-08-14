@@ -1,6 +1,6 @@
 //
 //  TTTRestClient.m
-//  TableTennisMatchup
+//  TableTennisTime
 //
 //  Created by Sheel Choksi on 5/18/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
@@ -46,6 +46,20 @@
     [self makeRequest:path withCallback:callback];
 }
 
+- (void)put:(NSString *)path options:(NSDictionary*)body callback:(void ( ^ )(id)) callback
+{
+    [self
+     makeRequest:path
+     requestCustomization:^(NSMutableURLRequest* theRequest) {
+         NSError *jsonParseErrors;
+
+         [theRequest setHTTPMethod:@"PUT"];
+         [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+         [theRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:body options:0 error: &jsonParseErrors]];
+     }
+     withCallback:callback];
+}
+
 - (void)post:(NSString *)path options:(NSDictionary*)body callback:(void ( ^ )(id)) callback
 {
     [self
@@ -58,7 +72,6 @@
         [theRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:body options:0 error: &jsonParseErrors]];
      }
      withCallback:callback];
-    
 }
 
 - (void) makeRequest:(NSString *)path withCallback:(void (^)(TTTResponse *)) callback

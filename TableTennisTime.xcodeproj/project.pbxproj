@@ -18,11 +18,15 @@
 		504945AB1748BA2000280208 /* TTTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 504945AA1748BA2000280208 /* TTTResponse.m */; };
 		5051BE91177FC03A001A34E3 /* TTTMatchFoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5051BE8F177FC03A001A34E3 /* TTTMatchFoundController.m */; };
 		5051BE92177FC03A001A34E3 /* TTTMatchFoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5051BE90177FC03A001A34E3 /* TTTMatchFoundController.xib */; };
-		5059D823174B437200F626B9 /* TTTMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5059D822174B437200F626B9 /* TTTMatch.m */; };
-		50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50722E651749FB7C00000C56 /* TTTMatchesController.m */; };
-		50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50722E661749FB7C00000C56 /* TTTMatchesController.xib */; };
+		5059D823174B437200F626B9 /* TTTMatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5059D822174B437200F626B9 /* TTTMatchRequest.m */; };
+		50722E671749FB7C00000C56 /* TTTMatchRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50722E651749FB7C00000C56 /* TTTMatchRequestController.m */; };
+		50722E681749FB7C00000C56 /* TTTMatchRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50722E661749FB7C00000C56 /* TTTMatchRequestController.xib */; };
 		508257B51780FE0F00562B99 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508257B41780FE0F00562B99 /* icon.iconset */; };
 		508257BB1780FE5400562B99 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 508257BA1780FE5400562B99 /* icon.icns */; };
+		5084E2D617B84D3800983294 /* TTTMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5084E2D517B84D3800983294 /* TTTMatch.m */; };
+		5084E2DA17B8593200983294 /* confirmed_icon_-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5084E2D717B8593200983294 /* confirmed_icon_-1.png */; };
+		5084E2DB17B8593200983294 /* confirmed_icon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5084E2D817B8593200983294 /* confirmed_icon_0.png */; };
+		5084E2DC17B8593200983294 /* confirmed_icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5084E2D917B8593200983294 /* confirmed_icon_1.png */; };
 		50BDB61817A484BB005C8CD4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BDB61717A484BB005C8CD4 /* MainMenu.xib */; };
 		50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */; };
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
@@ -38,35 +42,40 @@
 		504945771748517A00280208 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5049457A1748517A00280208 /* TableTennisTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableTennisTime-Info.plist"; sourceTree = "<group>"; };
 		5049457C1748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5049457E1748517A00280208 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		504945801748517A00280208 /* TableTennisTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableTennisTime-Prefix.pch"; sourceTree = "<group>"; };
+		5049457E1748517A00280208 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		504945801748517A00280208 /* TableTennisTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "TableTennisTime-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		504945821748517A00280208 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		504945841748517A00280208 /* TTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTAppDelegate.h; sourceTree = "<group>"; };
-		504945851748517A00280208 /* TTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTAppDelegate.m; sourceTree = "<group>"; };
+		504945841748517A00280208 /* TTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		504945851748517A00280208 /* TTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5049459D1748803C00280208 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		5049459E1748803C00280208 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
-		504945A2174897E100280208 /* TTTRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTRestClient.h; sourceTree = "<group>"; };
-		504945A3174897E100280208 /* TTTRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTRestClient.m; sourceTree = "<group>"; };
-		504945A91748BA2000280208 /* TTTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTResponse.h; sourceTree = "<group>"; };
-		504945AA1748BA2000280208 /* TTTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTResponse.m; sourceTree = "<group>"; };
-		5051BE8E177FC03A001A34E3 /* TTTMatchFoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatchFoundController.h; sourceTree = "<group>"; };
-		5051BE8F177FC03A001A34E3 /* TTTMatchFoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMatchFoundController.m; sourceTree = "<group>"; };
+		504945A2174897E100280208 /* TTTRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTRestClient.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		504945A3174897E100280208 /* TTTRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTRestClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		504945A91748BA2000280208 /* TTTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTResponse.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		504945AA1748BA2000280208 /* TTTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTResponse.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5051BE8E177FC03A001A34E3 /* TTTMatchFoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTMatchFoundController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5051BE8F177FC03A001A34E3 /* TTTMatchFoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTMatchFoundController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5051BE90177FC03A001A34E3 /* TTTMatchFoundController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchFoundController.xib; sourceTree = "<group>"; };
-		5059D821174B437200F626B9 /* TTTMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatch.h; sourceTree = "<group>"; };
-		5059D822174B437200F626B9 /* TTTMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMatch.m; sourceTree = "<group>"; };
-		50722E641749FB7C00000C56 /* TTTMatchesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatchesController.h; sourceTree = "<group>"; };
-		50722E651749FB7C00000C56 /* TTTMatchesController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = TTTMatchesController.m; sourceTree = "<group>"; tabWidth = 2; };
-		50722E661749FB7C00000C56 /* TTTMatchesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchesController.xib; sourceTree = "<group>"; };
+		5059D821174B437200F626B9 /* TTTMatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTMatchRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5059D822174B437200F626B9 /* TTTMatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTMatchRequest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		50722E641749FB7C00000C56 /* TTTMatchRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTMatchRequestController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		50722E651749FB7C00000C56 /* TTTMatchRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTMatchRequestController.m; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		50722E661749FB7C00000C56 /* TTTMatchRequestController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTMatchRequestController.xib; sourceTree = "<group>"; };
 		508257B41780FE0F00562B99 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		508257BA1780FE5400562B99 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		5084E2D417B84D3800983294 /* TTTMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMatch.h; sourceTree = "<group>"; };
+		5084E2D517B84D3800983294 /* TTTMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMatch.m; sourceTree = "<group>"; };
+		5084E2D717B8593200983294 /* confirmed_icon_-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "confirmed_icon_-1.png"; sourceTree = "<group>"; };
+		5084E2D817B8593200983294 /* confirmed_icon_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmed_icon_0.png; sourceTree = "<group>"; };
+		5084E2D917B8593200983294 /* confirmed_icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmed_icon_1.png; sourceTree = "<group>"; };
 		50BDB61717A484BB005C8CD4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		50BDB61A17A48ACB005C8CD4 /* TTTStatusMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStatusMenuController.h; sourceTree = "<group>"; };
-		50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStatusMenuController.m; sourceTree = "<group>"; };
-		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPreferencesController.h; sourceTree = "<group>"; };
-		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPreferencesController.m; sourceTree = "<group>"; };
+		50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTStatusMenuController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		50D66F4717494E000072DA97 /* TTTPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTPreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		50D66F4817494E000072DA97 /* TTTPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTPreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		50D66F4917494E000072DA97 /* TTTPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTTPreferencesController.xib; sourceTree = "<group>"; };
-		50E95F7117B35CB500D9126F /* TTTStatusMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStatusMenuDelegate.h; sourceTree = "<group>"; };
-		50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStatusMenuDelegate.m; sourceTree = "<group>"; };
+		50E95F7117B35CB500D9126F /* TTTStatusMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTTStatusMenuDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTStatusMenuDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +156,9 @@
 		5049459B17487CCB00280208 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5084E2D717B8593200983294 /* confirmed_icon_-1.png */,
+				5084E2D817B8593200983294 /* confirmed_icon_0.png */,
+				5084E2D917B8593200983294 /* confirmed_icon_1.png */,
 				508257B41780FE0F00562B99 /* icon.iconset */,
 				5049459D1748803C00280208 /* check.png */,
 				5049459E1748803C00280208 /* cross.png */,
@@ -162,8 +174,10 @@
 				504945A3174897E100280208 /* TTTRestClient.m */,
 				504945A91748BA2000280208 /* TTTResponse.h */,
 				504945AA1748BA2000280208 /* TTTResponse.m */,
-				5059D821174B437200F626B9 /* TTTMatch.h */,
-				5059D822174B437200F626B9 /* TTTMatch.m */,
+				5059D821174B437200F626B9 /* TTTMatchRequest.h */,
+				5059D822174B437200F626B9 /* TTTMatchRequest.m */,
+				5084E2D417B84D3800983294 /* TTTMatch.h */,
+				5084E2D517B84D3800983294 /* TTTMatch.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -174,9 +188,9 @@
 				50D66F4717494E000072DA97 /* TTTPreferencesController.h */,
 				50D66F4817494E000072DA97 /* TTTPreferencesController.m */,
 				50D66F4917494E000072DA97 /* TTTPreferencesController.xib */,
-				50722E641749FB7C00000C56 /* TTTMatchesController.h */,
-				50722E651749FB7C00000C56 /* TTTMatchesController.m */,
-				50722E661749FB7C00000C56 /* TTTMatchesController.xib */,
+				50722E641749FB7C00000C56 /* TTTMatchRequestController.h */,
+				50722E651749FB7C00000C56 /* TTTMatchRequestController.m */,
+				50722E661749FB7C00000C56 /* TTTMatchRequestController.xib */,
 				5051BE8E177FC03A001A34E3 /* TTTMatchFoundController.h */,
 				5051BE8F177FC03A001A34E3 /* TTTMatchFoundController.m */,
 				5051BE90177FC03A001A34E3 /* TTTMatchFoundController.xib */,
@@ -245,11 +259,14 @@
 				5049459F1748803C00280208 /* check.png in Resources */,
 				504945A01748803C00280208 /* cross.png in Resources */,
 				50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */,
-				50722E681749FB7C00000C56 /* TTTMatchesController.xib in Resources */,
+				50722E681749FB7C00000C56 /* TTTMatchRequestController.xib in Resources */,
 				5051BE92177FC03A001A34E3 /* TTTMatchFoundController.xib in Resources */,
 				508257B51780FE0F00562B99 /* icon.iconset in Resources */,
 				508257BB1780FE5400562B99 /* icon.icns in Resources */,
 				50BDB61817A484BB005C8CD4 /* MainMenu.xib in Resources */,
+				5084E2DA17B8593200983294 /* confirmed_icon_-1.png in Resources */,
+				5084E2DB17B8593200983294 /* confirmed_icon_0.png in Resources */,
+				5084E2DC17B8593200983294 /* confirmed_icon_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,11 +282,12 @@
 				504945A4174897E100280208 /* TTTRestClient.m in Sources */,
 				504945AB1748BA2000280208 /* TTTResponse.m in Sources */,
 				50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */,
-				50722E671749FB7C00000C56 /* TTTMatchesController.m in Sources */,
-				5059D823174B437200F626B9 /* TTTMatch.m in Sources */,
+				50722E671749FB7C00000C56 /* TTTMatchRequestController.m in Sources */,
+				5059D823174B437200F626B9 /* TTTMatchRequest.m in Sources */,
 				5051BE91177FC03A001A34E3 /* TTTMatchFoundController.m in Sources */,
 				50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */,
 				50E95F7317B35CB500D9126F /* TTTStatusMenuDelegate.m in Sources */,
+				5084E2D617B84D3800983294 /* TTTMatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "TTTStatusMenuDelegate.h"
-#import "TTTMatch.h"
+#import "TTTMatchRequest.h"
 
 extern NSString* kRequestMatchTitle;
 extern int kRequestMatchTag;
@@ -15,14 +15,14 @@ extern int kTimeRemainingTag;
 
 @implementation TTTStatusMenuDelegate
 {
-    TTTMatch *match;
+    TTTMatchRequest *matchRequest;
 }
 
-- (id)initWithMatch:(TTTMatch *)initMatch
+- (id)initWithMatchRequest:(TTTMatchRequest *)givenMatchRequest
 {
     self = [super init];
     if (self) {
-        match = initMatch;
+        matchRequest = givenMatchRequest;
     }
 
     return self;
@@ -33,12 +33,12 @@ extern int kTimeRemainingTag;
     NSMenuItem* awaitingMatchItem = [menu itemWithTag:kRequestMatchTag];
     NSMenuItem* timeRemainingForMatchItem = [menu itemWithTag:kTimeRemainingTag];
 
-    if(match.pollingGuid) {
+    if(matchRequest.pendingMatch) {
         awaitingMatchItem.title = @"Awaiting match...";
         awaitingMatchItem.enabled = NO;
 
         timeRemainingForMatchItem.hidden = NO;
-        NSString *remainingTime = [NSString stringWithFormat:@"%d", ((int) match.timeLeftInRequest / 60) + 1];
+        NSString *remainingTime = [NSString stringWithFormat:@"%d", ((int) matchRequest.timeLeftInRequest / 60) + 1];
         timeRemainingForMatchItem.title = [[@"Request alive for ~" stringByAppendingString:remainingTime] stringByAppendingString:@" more min(s)"];
     } else {
         awaitingMatchItem.title = kRequestMatchTitle;

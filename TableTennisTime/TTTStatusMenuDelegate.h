@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class TTTMatch;
+@class TTTMatchRequest;
 
 @interface TTTStatusMenuDelegate : NSObject<NSMenuDelegate>
 
-- (id)initWithMatch:(TTTMatch *)match;
+- (id)initWithMatchRequest:(TTTMatchRequest *)givenMatchRequest;
 
 @end

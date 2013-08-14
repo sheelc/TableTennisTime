@@ -2,83 +2,80 @@
 //  TTTMatch.m
 //  TableTennisTime
 //
-//  Created by Sheel Choksi on 5/20/13.
+//  Created by Sheel Choksi on 8/11/13.
 //  Copyright (c) 2013 Sheel's Code. All rights reserved.
 //
 
 #import "TTTMatch.h"
+#import "TTTMatchRequest.h"
+#import "TTTRestClient.h"
 #import "TTTResponse.h"
-#import <Foundation/NSTimer.h>
 
-#define POLLING_INTERVAL (10.0)
+#define POLLING_INTERVAL 1.0
 
 @implementation TTTMatch
 {
-    NSUserDefaults* settings;
     TTTRestClient* client;
-    NSTimer* timer;
+    NSString *confirmationPollingGuid;
+    NSTimer *timer;
 }
 
-- (id)initWithSettings:(NSUserDefaults *)userSettings andRestClient:(TTTRestClient *)restClient
+- (id)initWithRestClient:(TTTRestClient *)restClient
 {
     self = [super init];
-    if (self) {
-        settings = userSettings;
+    if(self) {
         client = restClient;
-        [self refreshFromSettings];
     }
 
     return self;
 }
 
-- (void)createMatchFromOptions:(NSDictionary *)options onComplete: (void (^)(BOOL)) callback
+- (void)beginPollingForConfirmationWithJSON:(NSDictionary *)json
 {
-    [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-        [settings setObject:obj forKey:key];
-    }];
-    self.matchRequestDate = [NSDate date];
-    [self refreshFromSettings];
-    [client post:@"/matches" options:options callback:^(TTTResponse* resp){
-        if ([resp success]) {
-            self.pollingGuid = [[resp json] objectForKey:@"guid"];
-            timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForMatchUpdates) userInfo:NULL repeats:YES];
-            [timer fire];
+    confirmationPollingGuid = [json objectForKey:@"scheduledMatchGuid"];
+    timer = [NSTimer scheduledTimerWithTimeInterval:POLLING_INTERVAL target:self selector:@selector(pollForConfirmation) userInfo:NULL repeats:YES];
+    [timer fire];
+}
+
+- (void)pollForConfirmation {
+    [client get:[self matchPath] callback:^(TTTResponse *resp) {
+        NSDictionary *json = [resp json];
+        self.scheduled = [json[@"scheduled"] integerValue];
+
+        if([resp statusCode] == 404) {
+            self.scheduled = -1;
+            self.timeRemaining = 0;
         }
-        callback([resp success]);
-    }];
-}
 
-- (NSString *)opponentNames {
-    return self.scheduledMatchData[@"opponentNames"];
-}
-
-- (NSString *)assignedTable {
-    return self.scheduledMatchData[@"assignedTable"];
-}
-
-- (NSTimeInterval)timeLeftInRequest {
-    return fmaxf([[NSDate dateWithTimeInterval:[self.requestTTL doubleValue] * 60 sinceDate:self.matchRequestDate] timeIntervalSinceNow], 0);
-}
-
-- (void) pollForMatchUpdates
-{
-    NSMutableString *path = [[NSMutableString alloc] initWithString:@"/matches/"];
-    [path appendString: self.pollingGuid];
-    [client get:path callback:^(TTTResponse *resp) {
-        if(([resp statusCode] == 404) || [resp success]) {
-            self.scheduledMatchData = [resp json];
+        if(self.scheduled != 0) {
             [timer invalidate];
-            self.pollingGuid = NULL;
-            timer = NULL;
+        }
+
+
+        NSArray *responseKeys = @[@"assignedTable", @"teams", @"timeRemaining"];
+        for (NSString *key in responseKeys) {
+            if(json[key]) {
+                [self setValue:json[key] forKey:key];
+            }
+        }
+
+        if(!self.matchFound) {
+            self.matchFound = YES;
         }
     }];
 }
 
-- (void)refreshFromSettings
-{
-    [@[@"names", @"matchType", @"numPlayers", @"requestTTL"] enumerateObjectsUsingBlock:^(id key, NSUInteger index, BOOL *stop){
-        [self setValue:[settings objectForKey:key] forKey:key];
-    }];
+- (void)acceptMatch {
+    [client put:[self matchPath] options:@{@"accepted" : @YES, @"matchRequestGuid" : self.matchRequestGuid} callback:^(id resp){}];
 }
+
+- (void)rejectMatch {
+    [client put:[self matchPath] options:@{@"accepted" : @NO, @"matchRequestGuid" : self.matchRequestGuid} callback:^(id resp){}];
+}
+
+- (NSString *)matchPath {
+    return [@"/matches/" stringByAppendingString:confirmationPollingGuid];
+}
+
 
 @end

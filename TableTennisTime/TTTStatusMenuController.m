@@ -7,9 +7,10 @@
 //
 
 #import "TTTStatusMenuController.h"
-#import "TTTMatchesController.h"
+#import "TTTMatchRequestController.h"
 #import "TTTPreferencesController.h"
 #import "TTTMatchFoundController.h"
+#import "TTTMatchRequest.h"
 #import "TTTMatch.h"
 #import "TTTRestClient.h"
 #import "TTTStatusMenuDelegate.h"
@@ -24,20 +25,22 @@ int kTimeRemainingTag = 2;
     id<NSMenuDelegate> menuDelegate;
     NSStatusItem* statusItem;
     TTTRestClient* restClient;
+    TTTMatchRequest* matchRequest;
     TTTMatch* match;
 
-    TTTPreferencesController* preferences;
-    TTTMatchesController* matches;
-    TTTMatchFoundController* matchScheduled;
+    TTTPreferencesController* preferencesController;
+    TTTMatchRequestController* matchRequestController;
+    TTTMatchFoundController* matchFoundController;
 }
 
 - (id) initWithUserSettings:(NSUserDefaults *)userSettings {
     self = [super init];
     if(self) {
         restClient = [[TTTRestClient alloc] initWithSettings: userSettings];
-        match = [[TTTMatch alloc] initWithSettings:userSettings andRestClient:restClient];
+        match = [[TTTMatch alloc] initWithRestClient:restClient];
+        matchRequest = [[TTTMatchRequest alloc] initWithSettings:userSettings andRestClient:restClient andMatch:match];
 
-        matchScheduled = [[TTTMatchFoundController alloc] initWithMatch: match];
+        matchFoundController = [[TTTMatchFoundController alloc] initWithMatch: match];
         
         statusMenu = self.createStatusMenu;
         statusItem = self.createStatusItem;
@@ -75,7 +78,7 @@ int kTimeRemainingTag = 2;
     menuItem = [menu addItemWithTitle:@"Quit" action:@selector(closeApplication:) keyEquivalent:@""];
     menuItem.target = self;
 
-    menuDelegate = [[TTTStatusMenuDelegate alloc] initWithMatch:match];
+    menuDelegate = [[TTTStatusMenuDelegate alloc] initWithMatchRequest:matchRequest];
     menu.delegate = menuDelegate;
 
     return menu;
@@ -93,30 +96,30 @@ int kTimeRemainingTag = 2;
 
 - (void)openPreferences:(id)sender
 {
-    if(!preferences) {
-        preferences = [[TTTPreferencesController alloc] initWithRestClient: restClient];
-        [[preferences window] setLevel: NSPopUpMenuWindowLevel];
-        [preferences showWindow:self];
+    if(!preferencesController) {
+        preferencesController = [[TTTPreferencesController alloc] initWithRestClient: restClient];
+        [[preferencesController window] setLevel: NSPopUpMenuWindowLevel];
+        [preferencesController showWindow:self];
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
-                                                          object:[preferences window]
+                                                          object:[preferencesController window]
                                                            queue:nil
                                                       usingBlock:^(NSNotification *notification) {
-                                                          preferences = nil;
+                                                          preferencesController = nil;
                                                       }];
     }
 }
 
 - (void)createMatch:(id)sender
 {
-    if(!matches) {
-        matches = [[TTTMatchesController alloc] initWithMatch: match];
-        [[matches window] setLevel: NSPopUpMenuWindowLevel];
-        [matches showWindow:self];
+    if(!matchRequestController) {
+        matchRequestController = [[TTTMatchRequestController alloc] initWithMatchRequest: matchRequest];
+        [[matchRequestController window] setLevel: NSPopUpMenuWindowLevel];
+        [matchRequestController showWindow:self];
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification
-                                                          object:[matches window]
+                                                          object:[matchRequestController window]
                                                            queue:nil
                                                       usingBlock:^(NSNotification *notification) {
-                                                          matches = nil;
+                                                          matchRequestController = nil;
                                                       }];
     }
 }
