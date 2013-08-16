@@ -21,12 +21,13 @@ typedef void(^ImageTogglerBlock)(BOOL);
     self = [super initWithWindowNibName:@"TTTPreferencesController" owner:self];
     if (self){
         client = restClient;
-        
+        __weak TTTPreferencesController *weakSelf = self;
+
         imageToggler = ^(BOOL valid){
             if(valid){
-                self.status.image = [NSImage imageNamed: @"check.png"];
+                weakSelf.status.image = [NSImage imageNamed: @"check.png"];
             } else {
-                self.status.image = [NSImage imageNamed: @"cross.png"];
+                weakSelf.status.image = [NSImage imageNamed: @"cross.png"];
             }
         };
     }
