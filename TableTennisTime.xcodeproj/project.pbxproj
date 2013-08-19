@@ -26,6 +26,7 @@
 		5084E2D617B84D3800983294 /* TTTMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5084E2D517B84D3800983294 /* TTTMatch.m */; };
 		50BDB61817A484BB005C8CD4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BDB61717A484BB005C8CD4 /* MainMenu.xib */; };
 		50BDB61C17A48ACB005C8CD4 /* TTTStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */; };
+		50CCA0A117BEC65B00381B59 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CCA09617BEC61200381B59 /* Sparkle.framework */; };
 		50D436F717BB3E0A00196659 /* reject.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D436F517BB3E0A00196659 /* reject.png */; };
 		50D436F917BB44FC00196659 /* accept.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D436F817BB44FC00196659 /* accept.png */; };
 		50D4370217BB570D00196659 /* confirmed_icon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D436FF17BB570D00196659 /* confirmed_icon_0.png */; };
@@ -34,7 +35,66 @@
 		50D66F4A17494E000072DA97 /* TTTPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D66F4817494E000072DA97 /* TTTPreferencesController.m */; };
 		50D66F4B17494E000072DA97 /* TTTPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D66F4917494E000072DA97 /* TTTPreferencesController.xib */; };
 		50E95F7317B35CB500D9126F /* TTTStatusMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E95F7217B35CB500D9126F /* TTTStatusMenuDelegate.m */; };
+		50F56C8817C1A6F5004A275B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50CCA09617BEC61200381B59 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50CCA09517BEC61200381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		50CCA09717BEC61200381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		50CCA09917BEC61200381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		50CCA09B17BEC61200381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		50CCA09D17BEC61200381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
+		50CCA09F17BEC65400381B59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50F56C8717C1A6DF004A275B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50F56C8817C1A6F5004A275B /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5049456E1748517A00280208 /* TableTennisTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTennisTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +130,7 @@
 		50BDB61717A484BB005C8CD4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		50BDB61A17A48ACB005C8CD4 /* TTTStatusMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStatusMenuController.h; sourceTree = "<group>"; };
 		50BDB61B17A48ACB005C8CD4 /* TTTStatusMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTStatusMenuController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparkle.xcodeproj; sourceTree = "<group>"; };
 		50D436F517BB3E0A00196659 /* reject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reject.png; sourceTree = "<group>"; };
 		50D436F817BB44FC00196659 /* accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accept.png; sourceTree = "<group>"; };
 		50D436FB17BB549A00196659 /* buttons.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttons.pxm; sourceTree = "<group>"; };
@@ -91,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CCA0A117BEC65B00381B59 /* Sparkle.framework in Frameworks */,
 				504945731748517A00280208 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +163,7 @@
 		504945631748517A00280208 = {
 			isa = PBXGroup;
 			children = (
+				50CC9EDA17BEC61100381B59 /* Externals */,
 				50D436FA17BB546A00196659 /* Content Production Files */,
 				508257BA1780FE5400562B99 /* icon.icns */,
 				504945711748517A00280208 /* Frameworks */,
@@ -213,6 +276,34 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		50CC9EDA17BEC61100381B59 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				50CC9EDB17BEC61100381B59 /* Sparkle */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		50CC9EDB17BEC61100381B59 /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */,
+			);
+			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		50CC9FB117BEC61100381B59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50CCA09617BEC61200381B59 /* Sparkle.framework */,
+				50CCA09817BEC61200381B59 /* Sparkle Test App.app */,
+				50CCA09A17BEC61200381B59 /* Sparkle Unit Tests.octest */,
+				50CCA09C17BEC61200381B59 /* BinaryDelta */,
+				50CCA09E17BEC61200381B59 /* finish_installation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		50D436FA17BB546A00196659 /* Content Production Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,10 +325,12 @@
 				5049456A1748517A00280208 /* Sources */,
 				5049456B1748517A00280208 /* Frameworks */,
 				5049456C1748517A00280208 /* Resources */,
+				50F56C8717C1A6DF004A275B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				50CCA0A017BEC65400381B59 /* PBXTargetDependency */,
 			);
 			name = TableTennisTime;
 			productName = TableTennisMatchup;
@@ -260,16 +353,94 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
+				ca,
+				cs,
+				cy,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				is,
+				it,
+				ja,
+				ko,
+				nl,
+				no,
+				pl,
+				"pt-BR",
+				pt_BR,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sl,
+				sv,
+				English,
+				th,
+				tr,
+				uk,
+				zh_CN,
+				zh_TW,
 			);
 			mainGroup = 504945631748517A00280208;
 			productRefGroup = 5049456F1748517A00280208 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 50CC9FB117BEC61100381B59 /* Products */;
+					ProjectRef = 50CC9FB017BEC61100381B59 /* Sparkle.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5049456D1748517A00280208 /* TableTennisTime */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		50CCA09617BEC61200381B59 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 50CCA09517BEC61200381B59 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50CCA09817BEC61200381B59 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 50CCA09717BEC61200381B59 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50CCA09A17BEC61200381B59 /* Sparkle Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.octest";
+			remoteRef = 50CCA09917BEC61200381B59 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50CCA09C17BEC61200381B59 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 50CCA09B17BEC61200381B59 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50CCA09E17BEC61200381B59 /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = 50CCA09D17BEC61200381B59 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5049456C1748517A00280208 /* Resources */ = {
@@ -316,6 +487,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50CCA0A017BEC65400381B59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = 50CCA09F17BEC65400381B59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5049457B1748517A00280208 /* InfoPlist.strings */ = {
@@ -393,11 +572,13 @@
 		5049458D1748517B00280208 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableTennisTime/TableTennisTime-Prefix.pch";
 				INFOPLIST_FILE = "TableTennisTime/TableTennisTime-Info.plist";
 				PRODUCT_NAME = TableTennisTime;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,11 +586,13 @@
 		5049458E1748517B00280208 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableTennisTime/TableTennisTime-Prefix.pch";
 				INFOPLIST_FILE = "TableTennisTime/TableTennisTime-Info.plist";
 				PRODUCT_NAME = TableTennisTime;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

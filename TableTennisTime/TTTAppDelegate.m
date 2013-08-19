@@ -8,6 +8,7 @@
 
 #import "TTTAppDelegate.h"
 #import "TTTStatusMenuController.h"
+#import <Sparkle/Sparkle.h>
 
 @implementation TTTAppDelegate
 {
@@ -18,6 +19,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     userSettings = [[NSUserDefaults alloc] init];
+    [SUUpdater sharedUpdater].automaticallyDownloadsUpdates = YES;
     statusMenuController = [[TTTStatusMenuController alloc] initWithUserSettings:userSettings];
 }
 
