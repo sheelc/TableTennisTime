@@ -68,6 +68,9 @@
             self.pendingMatch = NO;
             [timer invalidate];
             timer = nil;
+        }
+
+        if([resp success]) {
             [match beginPollingForConfirmationWithJSON:[resp json]];
         }
     }];
